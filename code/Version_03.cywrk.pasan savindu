@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Version_03\Test_01\Source Files\main.c">
+<ExpandedNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\TopDesign</v>
+<v>Version_03\Test_01\Test_01.cydwr</v>
+<v>Version_03\Test_01\Test_01.cydwr\Pins</v>
+<v>Version_03\Test_01\Test_01.cydwr\Analog</v>
+<v>Version_03\Test_01\Test_01.cydwr\Clocks</v>
+<v>Version_03\Test_01\Test_01.cydwr\Interrupts</v>
+<v>Version_03\Test_01\Test_01.cydwr\DMA</v>
+<v>Version_03\Test_01\Test_01.cydwr\System</v>
+<v>Version_03\Test_01\Test_01.cydwr\Directives</v>
+<v>Version_03\Test_01\Test_01.cydwr\Flash Security</v>
+<v>Version_03\Test_01\Test_01.cydwr\EEPROM</v>
+<v>Version_03\Test_01\Header Files\cyapicallbacks.h</v>
+<v>Version_03\Test_01\Source Files</v>
+<v>Version_03\Test_01\Source Files\main.c</v>
+<v>Version_03\Test_01\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\TopDesign</v>
+<v>Version_03\Test_01\Test_01.cydwr</v>
+<v>Version_03\Test_01\Test_01.cydwr\Pins</v>
+<v>Version_03\Test_01\Test_01.cydwr\Analog</v>
+<v>Version_03\Test_01\Test_01.cydwr\Clocks</v>
+<v>Version_03\Test_01\Test_01.cydwr\Interrupts</v>
+<v>Version_03\Test_01\Test_01.cydwr\DMA</v>
+<v>Version_03\Test_01\Test_01.cydwr\System</v>
+<v>Version_03\Test_01\Test_01.cydwr\Directives</v>
+<v>Version_03\Test_01\Test_01.cydwr\Flash Security</v>
+<v>Version_03\Test_01\Test_01.cydwr\EEPROM</v>
+<v>Version_03\Test_01\Header Files</v>
+<v>Version_03\Test_01\Source Files</v>
+<v>Version_03\Test_01\Source Files\main.c</v>
+<v>Version_03\Test_01\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\TopDesign</v>
+<v>Version_03\Test_01\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\TopDesign</v>
+<v>Version_03\Test_01\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Version_03">
+<ExpandedNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\CortexM3</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Backward_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Backward_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Base_Selector.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\BLUE_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk3.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk4.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk5.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk6.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk7.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Counter.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Counter_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S0.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S3.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\ColorS_Out.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_Color.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_Color_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Flicker.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Flicker_Servo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Flicker_Servo_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Forwad_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Forward_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\GREEN_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Gripper.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_INT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_MASTER.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_SLAVE.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\IR_Out.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_3.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_4.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_5.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_6.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\limitSW_1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\limitSW_2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PhaseA_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PhaseA_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PhaseB_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PhaseB_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Motor.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Motor_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L_Cnt16.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L_Cnt16_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L_INT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L_isr.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_L_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R_Cnt16.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R_Cnt16_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R_INT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R_isr.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\QuadDec_R_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Rack.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\RED_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\RobotArm_Servo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\RobotArm_Servo_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S1_Echo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S1_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S1_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S1_Trigger.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S2_Echo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S2_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S2_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S2_Trigger.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S3_Echo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S3_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S3_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S3_Trigger.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S4_Echo.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S4_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S4_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\S4_Trigger.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Status_Reg_1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Status_Reg_2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_INT.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_IntClock.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Test_01.elf</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Test_01.hex</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Test_01.map</v>
+<v>Version_03\Test_01\Test_01.gpdsc</v>
+<v>Version_03\Test_01\Test_01.rpt</v>
+<v>Version_03\Test_01\Test_01_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\CortexM3</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Backward_L.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Backward_R.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Base_Selector.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\BLUE_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk3.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk4.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk5.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk6.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\clk7.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Counter.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Counter_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_LED.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S0.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S1.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S2.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_S3.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Timer.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Color_Timer_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\ColorS_Out.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_Color.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_Color_PM.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Version_03\Test_01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Version_03">
+<ExpandedNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\PSoC 5LP Architecture TRM</v>
+<v>Version_03\Test_01\CY8C58LP Family Datasheet</v>
+<v>Version_03\Test_01\System Reference Guides</v>
+<v>Version_03\Test_01\System Reference Guides\cy_boot_v5_70</v>
+<v>Version_03\Test_01\Counter_v3_0.pdf</v>
+<v>Version_03\Test_01\cy_clock_v2_20</v>
+<v>Version_03\Test_01\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Version_03\Test_01\cy_constant_v1_0</v>
+<v>Version_03\Test_01\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>Version_03\Test_01\cy_isr_v1_70</v>
+<v>Version_03\Test_01\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Version_03\Test_01\cy_pins_v2_20</v>
+<v>Version_03\Test_01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Version_03\Test_01\CyControlReg_v1_80.pdf</v>
+<v>Version_03\Test_01\CyStatusReg_v1_90</v>
+<v>Version_03\Test_01\CyStatusReg_v1_90\CyStatusReg_v1_90.pdf</v>
+<v>Version_03\Test_01\Debouncer_v1_0</v>
+<v>Version_03\Test_01\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>Version_03\Test_01\I2C_v3_50.pdf</v>
+<v>Version_03\Test_01\PWM_v3_30</v>
+<v>Version_03\Test_01\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>Version_03\Test_01\QuadDec_v3_0</v>
+<v>Version_03\Test_01\QuadDec_v3_0\QuadDec_v3_0.pdf</v>
+<v>Version_03\Test_01\Timer_v2_80</v>
+<v>Version_03\Test_01\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>Version_03\Test_01\UART_v2_50.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Version_03</v>
+<v>Version_03\Test_01</v>
+<v>Version_03\Test_01\PSoC 5LP Architecture TRM</v>
+<v>Version_03\Test_01\CY8C58LP Family Datasheet</v>
+<v>Version_03\Test_01\System Reference Guides</v>
+<v>Version_03\Test_01\System Reference Guides\cy_boot_v5_70</v>
+<v>Version_03\Test_01\Counter_v3_0.pdf</v>
+<v>Version_03\Test_01\cy_clock_v2_20</v>
+<v>Version_03\Test_01\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Version_03\Test_01\cy_constant_v1_0</v>
+<v>Version_03\Test_01\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>Version_03\Test_01\cy_isr_v1_70</v>
+<v>Version_03\Test_01\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Version_03\Test_01\cy_pins_v2_20</v>
+<v>Version_03\Test_01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Version_03\Test_01\CyControlReg_v1_80.pdf</v>
+<v>Version_03\Test_01\CyStatusReg_v1_90</v>
+<v>Version_03\Test_01\CyStatusReg_v1_90\CyStatusReg_v1_90.pdf</v>
+<v>Version_03\Test_01\Debouncer_v1_0</v>
+<v>Version_03\Test_01\Debouncer_v1_0\Debouncer_v1_0.pdf</v>
+<v>Version_03\Test_01\I2C_v3_50.pdf</v>
+<v>Version_03\Test_01\PWM_v3_30</v>
+<v>Version_03\Test_01\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>Version_03\Test_01\QuadDec_v3_0</v>
+<v>Version_03\Test_01\QuadDec_v3_0\QuadDec_v3_0.pdf</v>
+<v>Version_03\Test_01\Timer_v2_80</v>
+<v>Version_03\Test_01\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>Version_03\Test_01\UART_v2_50.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators>
+<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="874" DocumentName=".\Test_01.cydsn\main.c" />
+</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
+<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="892" DocumentName=".\Test_01.cydsn\main.c" />
+</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
+<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="30" DocumentName=".\Test_01.cydsn\main.c" />
+</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
+</indicators>
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Test_01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Test_01.cydsn\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1212, 502" SelectedTabbedMdiWindow="209e627b-6513-4bd8-8149-488a111cda0b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="46ee00f8-54cb-4d49-92f2-50f7a1885f73" /><DocumentWindow Key="R:\Year 03\ECE3091 - Engineering Design\Codes\Version_04\Version_03\Test_01.cydsn\TopDesign\TopDesign.cysch" Guid="12570d27-1836-465c-b9e4-0649e2eaf8de" /><DocumentWindow Key="R:\Year 03\ECE3091 - Engineering Design\Codes\Version_04\Version_03\Test_01.cydsn\main.c" Guid="209e627b-6513-4bd8-8149-488a111cda0b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
