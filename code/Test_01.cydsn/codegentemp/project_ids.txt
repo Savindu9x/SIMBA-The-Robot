@@ -1,0 +1,6 @@
+R:\Year 03\ECE3091 - Engineering Design\Codes\Version_03\Version_03\Test_01.cydsn\Test_01.cyprj|d9ce1ee4-8df4-4ead-aefb-54ebdfd27171
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|993eb390-bbd3-402a-8ce0-aea94a55d489
+Q:\User\Pasan_Savindu\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|8999b2d0-129f-487f-be26-01e81851b09c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|31abb9fe-1e29-4841-82aa-99c30536e7eb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|9af75a24-c0bc-4d2b-acfa-85ccccaf8cf9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|121316bc-235b-4405-9fb5-ef01b3d784b2
