@@ -1,0 +1,2392 @@
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Counter_Color.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Counter_Color_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	Counter_Color_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Counter_Color_Enable, %function
+  25              	Counter_Color_Enable:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC5\\Counter_Color.c"
+   1:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Counter_Color.c **** * File Name: Counter_Color.c  
+   3:Generated_Source\PSoC5/Counter_Color.c **** * Version 3.0
+   4:Generated_Source\PSoC5/Counter_Color.c **** *
+   5:Generated_Source\PSoC5/Counter_Color.c **** *  Description:
+   6:Generated_Source\PSoC5/Counter_Color.c **** *     The Counter component consists of a 8, 16, 24 or 32-bit counter with
+   7:Generated_Source\PSoC5/Counter_Color.c **** *     a selectable period between 2 and 2^Width - 1.  
+   8:Generated_Source\PSoC5/Counter_Color.c **** *
+   9:Generated_Source\PSoC5/Counter_Color.c **** *   Note:
+  10:Generated_Source\PSoC5/Counter_Color.c **** *     None
+  11:Generated_Source\PSoC5/Counter_Color.c **** *
+  12:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+  13:Generated_Source\PSoC5/Counter_Color.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC5/Counter_Color.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:Generated_Source\PSoC5/Counter_Color.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:Generated_Source\PSoC5/Counter_Color.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+  18:Generated_Source\PSoC5/Counter_Color.c **** 
+  19:Generated_Source\PSoC5/Counter_Color.c **** #include "Counter_Color.h"
+  20:Generated_Source\PSoC5/Counter_Color.c **** 
+  21:Generated_Source\PSoC5/Counter_Color.c **** uint8 Counter_Color_initVar = 0u;
+  22:Generated_Source\PSoC5/Counter_Color.c **** 
+  23:Generated_Source\PSoC5/Counter_Color.c **** 
+  24:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+  25:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_Init
+  26:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+  27:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+  28:Generated_Source\PSoC5/Counter_Color.c **** *     Initialize to the schematic state
+  29:Generated_Source\PSoC5/Counter_Color.c **** * 
+  30:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Counter_Color.c **** *  void  
+  32:Generated_Source\PSoC5/Counter_Color.c **** *
+  33:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+  34:Generated_Source\PSoC5/Counter_Color.c **** *  void
+  35:Generated_Source\PSoC5/Counter_Color.c **** *
+  36:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+  37:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_Init(void) 
+  38:Generated_Source\PSoC5/Counter_Color.c **** {
+  39:Generated_Source\PSoC5/Counter_Color.c ****         #if (!Counter_Color_UsingFixedFunction && !Counter_Color_ControlRegRemoved)
+  40:Generated_Source\PSoC5/Counter_Color.c ****             uint8 ctrl;
+  41:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!Counter_Color_UsingFixedFunction && !Counter_Color_ControlRegRemoved) */
+  42:Generated_Source\PSoC5/Counter_Color.c ****         
+  43:Generated_Source\PSoC5/Counter_Color.c ****         #if(!Counter_Color_UsingFixedFunction) 
+  44:Generated_Source\PSoC5/Counter_Color.c ****             /* Interrupt State Backup for Critical Region*/
+  45:Generated_Source\PSoC5/Counter_Color.c ****             uint8 Counter_Color_interruptState;
+  46:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!Counter_Color_UsingFixedFunction) */
+  47:Generated_Source\PSoC5/Counter_Color.c ****         
+  48:Generated_Source\PSoC5/Counter_Color.c ****         #if (Counter_Color_UsingFixedFunction)
+  49:Generated_Source\PSoC5/Counter_Color.c ****             /* Clear all bits but the enable bit (if it's already set for Timer operation */
+  50:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_CONTROL &= Counter_Color_CTRL_ENABLE;
+  51:Generated_Source\PSoC5/Counter_Color.c ****             
+  52:Generated_Source\PSoC5/Counter_Color.c ****             /* Clear the mode bits for continuous run mode */
+  53:Generated_Source\PSoC5/Counter_Color.c ****             #if (CY_PSOC5A)
+  54:Generated_Source\PSoC5/Counter_Color.c ****                 Counter_Color_CONTROL2 &= ((uint8)(~Counter_Color_CTRL_MODE_MASK));
+  55:Generated_Source\PSoC5/Counter_Color.c ****             #endif /* (CY_PSOC5A) */
+  56:Generated_Source\PSoC5/Counter_Color.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  57:Generated_Source\PSoC5/Counter_Color.c ****                 Counter_Color_CONTROL3 &= ((uint8)(~Counter_Color_CTRL_MODE_MASK));                
+  58:Generated_Source\PSoC5/Counter_Color.c ****             #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+  59:Generated_Source\PSoC5/Counter_Color.c ****             /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  60:Generated_Source\PSoC5/Counter_Color.c ****             #if (Counter_Color_RunModeUsed != 0x0u)
+  61:Generated_Source\PSoC5/Counter_Color.c ****                 /* Set 3rd bit of Control register to enable one shot mode */
+  62:Generated_Source\PSoC5/Counter_Color.c ****                 Counter_Color_CONTROL |= Counter_Color_ONESHOT;
+  63:Generated_Source\PSoC5/Counter_Color.c ****             #endif /* (Counter_Color_RunModeUsed != 0x0u) */
+  64:Generated_Source\PSoC5/Counter_Color.c ****             
+  65:Generated_Source\PSoC5/Counter_Color.c ****             /* Set the IRQ to use the status register interrupts */
+  66:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_CONTROL2 |= Counter_Color_CTRL2_IRQ_SEL;
+  67:Generated_Source\PSoC5/Counter_Color.c ****             
+  68:Generated_Source\PSoC5/Counter_Color.c ****             /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+  69:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_RT1 &= ((uint8)(~Counter_Color_RT1_MASK));
+  70:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_RT1 |= Counter_Color_SYNC;     
+  71:Generated_Source\PSoC5/Counter_Color.c ****                     
+  72:Generated_Source\PSoC5/Counter_Color.c ****             /*Enable DSI Sync all all inputs of the Timer*/
+  73:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_RT1 &= ((uint8)(~Counter_Color_SYNCDSI_MASK));
+  74:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_RT1 |= Counter_Color_SYNCDSI_EN;
+  75:Generated_Source\PSoC5/Counter_Color.c **** 
+  76:Generated_Source\PSoC5/Counter_Color.c ****         #else
+  77:Generated_Source\PSoC5/Counter_Color.c ****             #if(!Counter_Color_ControlRegRemoved)
+  78:Generated_Source\PSoC5/Counter_Color.c ****             /* Set the default compare mode defined in the parameter */
+  79:Generated_Source\PSoC5/Counter_Color.c ****             ctrl = Counter_Color_CONTROL & ((uint8)(~Counter_Color_CTRL_CMPMODE_MASK));
+  80:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_CONTROL = ctrl | Counter_Color_DEFAULT_COMPARE_MODE;
+  81:Generated_Source\PSoC5/Counter_Color.c ****             
+  82:Generated_Source\PSoC5/Counter_Color.c ****             /* Set the default capture mode defined in the parameter */
+  83:Generated_Source\PSoC5/Counter_Color.c ****             ctrl = Counter_Color_CONTROL & ((uint8)(~Counter_Color_CTRL_CAPMODE_MASK));
+  84:Generated_Source\PSoC5/Counter_Color.c ****             
+  85:Generated_Source\PSoC5/Counter_Color.c ****             #if( 0 != Counter_Color_CAPTURE_MODE_CONF)
+  86:Generated_Source\PSoC5/Counter_Color.c ****                 Counter_Color_CONTROL = ctrl | Counter_Color_DEFAULT_CAPTURE_MODE;
+  87:Generated_Source\PSoC5/Counter_Color.c ****             #else
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 3
+
+
+  88:Generated_Source\PSoC5/Counter_Color.c ****                 Counter_Color_CONTROL = ctrl;
+  89:Generated_Source\PSoC5/Counter_Color.c ****             #endif /* 0 != Counter_Color_CAPTURE_MODE */ 
+  90:Generated_Source\PSoC5/Counter_Color.c ****             
+  91:Generated_Source\PSoC5/Counter_Color.c ****             #endif /* (!Counter_Color_ControlRegRemoved) */
+  92:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (Counter_Color_UsingFixedFunction) */
+  93:Generated_Source\PSoC5/Counter_Color.c ****         
+  94:Generated_Source\PSoC5/Counter_Color.c ****         /* Clear all data in the FIFO's */
+  95:Generated_Source\PSoC5/Counter_Color.c ****         #if (!Counter_Color_UsingFixedFunction)
+  96:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_ClearFIFO();
+  97:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!Counter_Color_UsingFixedFunction) */
+  98:Generated_Source\PSoC5/Counter_Color.c ****         
+  99:Generated_Source\PSoC5/Counter_Color.c ****         /* Set Initial values from Configuration */
+ 100:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_WritePeriod(Counter_Color_INIT_PERIOD_VALUE);
+ 101:Generated_Source\PSoC5/Counter_Color.c ****         #if (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A)))
+ 102:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_WriteCounter(Counter_Color_INIT_COUNTER_VALUE);
+ 103:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A))) */
+ 104:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_SetInterruptMode(Counter_Color_INIT_INTERRUPTS_MASK);
+ 105:Generated_Source\PSoC5/Counter_Color.c ****         
+ 106:Generated_Source\PSoC5/Counter_Color.c ****         #if (!Counter_Color_UsingFixedFunction)
+ 107:Generated_Source\PSoC5/Counter_Color.c ****             /* Read the status register to clear the unwanted interrupts */
+ 108:Generated_Source\PSoC5/Counter_Color.c ****             (void)Counter_Color_ReadStatusRegister();
+ 109:Generated_Source\PSoC5/Counter_Color.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 110:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_WriteCompare(Counter_Color_INIT_COMPARE_VALUE);
+ 111:Generated_Source\PSoC5/Counter_Color.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 112:Generated_Source\PSoC5/Counter_Color.c ****             
+ 113:Generated_Source\PSoC5/Counter_Color.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 114:Generated_Source\PSoC5/Counter_Color.c ****             /* Enter Critical Region*/
+ 115:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_interruptState = CyEnterCriticalSection();
+ 116:Generated_Source\PSoC5/Counter_Color.c ****             
+ 117:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_STATUS_AUX_CTRL |= Counter_Color_STATUS_ACTL_INT_EN_MASK;
+ 118:Generated_Source\PSoC5/Counter_Color.c ****             
+ 119:Generated_Source\PSoC5/Counter_Color.c ****             /* Exit Critical Region*/
+ 120:Generated_Source\PSoC5/Counter_Color.c ****             CyExitCriticalSection(Counter_Color_interruptState);
+ 121:Generated_Source\PSoC5/Counter_Color.c ****             
+ 122:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!Counter_Color_UsingFixedFunction) */
+ 123:Generated_Source\PSoC5/Counter_Color.c **** }
+ 124:Generated_Source\PSoC5/Counter_Color.c **** 
+ 125:Generated_Source\PSoC5/Counter_Color.c **** 
+ 126:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 127:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_Enable
+ 128:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 129:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 130:Generated_Source\PSoC5/Counter_Color.c **** *     Enable the Counter
+ 131:Generated_Source\PSoC5/Counter_Color.c **** * 
+ 132:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 133:Generated_Source\PSoC5/Counter_Color.c **** *  void  
+ 134:Generated_Source\PSoC5/Counter_Color.c **** *
+ 135:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 136:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 137:Generated_Source\PSoC5/Counter_Color.c **** *
+ 138:Generated_Source\PSoC5/Counter_Color.c **** * Side Effects: 
+ 139:Generated_Source\PSoC5/Counter_Color.c **** *   If the Enable mode is set to Hardware only then this function has no effect 
+ 140:Generated_Source\PSoC5/Counter_Color.c **** *   on the operation of the counter.
+ 141:Generated_Source\PSoC5/Counter_Color.c **** *
+ 142:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 143:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_Enable(void) 
+ 144:Generated_Source\PSoC5/Counter_Color.c **** {
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 4
+
+
+  28              		.loc 1 144 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 145:Generated_Source\PSoC5/Counter_Color.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 146:Generated_Source\PSoC5/Counter_Color.c ****     #if (Counter_Color_UsingFixedFunction)
+ 147:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_ENABLE |= Counter_Color_BLOCK_EN_MASK;
+ 148:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_STBY_ENABLE |= Counter_Color_BLOCK_STBY_EN_MASK;
+ 149:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */  
+ 150:Generated_Source\PSoC5/Counter_Color.c ****         
+ 151:Generated_Source\PSoC5/Counter_Color.c ****     /* Enable the counter from the control register  */
+ 152:Generated_Source\PSoC5/Counter_Color.c ****     /* If Fixed Function then make sure Mode is set correctly */
+ 153:Generated_Source\PSoC5/Counter_Color.c ****     /* else make sure reset is clear */
+ 154:Generated_Source\PSoC5/Counter_Color.c ****     #if(!Counter_Color_ControlRegRemoved || Counter_Color_UsingFixedFunction)
+ 155:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_CONTROL |= Counter_Color_CTRL_ENABLE;                
+  33              		.loc 1 155 0
+  34 0000 024A     		ldr	r2, .L2
+  35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  36 0004 43F08003 		orr	r3, r3, #128
+  37 0008 1370     		strb	r3, [r2]
+  38 000a 7047     		bx	lr
+  39              	.L3:
+  40              		.align	2
+  41              	.L2:
+  42 000c 74650040 		.word	1073767796
+  43              		.cfi_endproc
+  44              	.LFE1:
+  45              		.size	Counter_Color_Enable, .-Counter_Color_Enable
+  46              		.section	.text.Counter_Color_Stop,"ax",%progbits
+  47              		.align	2
+  48              		.global	Counter_Color_Stop
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	Counter_Color_Stop, %function
+  52              	Counter_Color_Stop:
+  53              	.LFB3:
+ 156:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (!Counter_Color_ControlRegRemoved || Counter_Color_UsingFixedFunction) */
+ 157:Generated_Source\PSoC5/Counter_Color.c ****     
+ 158:Generated_Source\PSoC5/Counter_Color.c **** }
+ 159:Generated_Source\PSoC5/Counter_Color.c **** 
+ 160:Generated_Source\PSoC5/Counter_Color.c **** 
+ 161:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 162:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_Start
+ 163:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 164:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 165:Generated_Source\PSoC5/Counter_Color.c **** *  Enables the counter for operation 
+ 166:Generated_Source\PSoC5/Counter_Color.c **** *
+ 167:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 168:Generated_Source\PSoC5/Counter_Color.c **** *  void  
+ 169:Generated_Source\PSoC5/Counter_Color.c **** *
+ 170:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 171:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 172:Generated_Source\PSoC5/Counter_Color.c **** *
+ 173:Generated_Source\PSoC5/Counter_Color.c **** * Global variables:
+ 174:Generated_Source\PSoC5/Counter_Color.c **** *  Counter_Color_initVar: Is modified when this function is called for the  
+ 175:Generated_Source\PSoC5/Counter_Color.c **** *   first time. Is used to ensure that initialization happens only once.
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 5
+
+
+ 176:Generated_Source\PSoC5/Counter_Color.c **** *
+ 177:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 178:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_Start(void) 
+ 179:Generated_Source\PSoC5/Counter_Color.c **** {
+ 180:Generated_Source\PSoC5/Counter_Color.c ****     if(Counter_Color_initVar == 0u)
+ 181:Generated_Source\PSoC5/Counter_Color.c ****     {
+ 182:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_Init();
+ 183:Generated_Source\PSoC5/Counter_Color.c ****         
+ 184:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_initVar = 1u; /* Clear this bit for Initialization */        
+ 185:Generated_Source\PSoC5/Counter_Color.c ****     }
+ 186:Generated_Source\PSoC5/Counter_Color.c ****     
+ 187:Generated_Source\PSoC5/Counter_Color.c ****     /* Enable the Counter */
+ 188:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_Enable();        
+ 189:Generated_Source\PSoC5/Counter_Color.c **** }
+ 190:Generated_Source\PSoC5/Counter_Color.c **** 
+ 191:Generated_Source\PSoC5/Counter_Color.c **** 
+ 192:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 193:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_Stop
+ 194:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 195:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 196:Generated_Source\PSoC5/Counter_Color.c **** * Halts the counter, but does not change any modes or disable interrupts.
+ 197:Generated_Source\PSoC5/Counter_Color.c **** *
+ 198:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 199:Generated_Source\PSoC5/Counter_Color.c **** *  void  
+ 200:Generated_Source\PSoC5/Counter_Color.c **** *
+ 201:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 202:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 203:Generated_Source\PSoC5/Counter_Color.c **** *
+ 204:Generated_Source\PSoC5/Counter_Color.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 205:Generated_Source\PSoC5/Counter_Color.c **** *               has no effect on the operation of the counter.
+ 206:Generated_Source\PSoC5/Counter_Color.c **** *
+ 207:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 208:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_Stop(void) 
+ 209:Generated_Source\PSoC5/Counter_Color.c **** {
+  54              		.loc 1 209 0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+ 210:Generated_Source\PSoC5/Counter_Color.c ****     /* Disable Counter */
+ 211:Generated_Source\PSoC5/Counter_Color.c ****     #if(!Counter_Color_ControlRegRemoved || Counter_Color_UsingFixedFunction)
+ 212:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_CONTROL &= ((uint8)(~Counter_Color_CTRL_ENABLE));        
+  59              		.loc 1 212 0
+  60 0000 024A     		ldr	r2, .L5
+  61 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  62 0004 03F07F03 		and	r3, r3, #127
+  63 0008 1370     		strb	r3, [r2]
+  64 000a 7047     		bx	lr
+  65              	.L6:
+  66              		.align	2
+  67              	.L5:
+  68 000c 74650040 		.word	1073767796
+  69              		.cfi_endproc
+  70              	.LFE3:
+  71              		.size	Counter_Color_Stop, .-Counter_Color_Stop
+  72              		.section	.text.Counter_Color_SetInterruptMode,"ax",%progbits
+  73              		.align	2
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 6
+
+
+  74              		.global	Counter_Color_SetInterruptMode
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	Counter_Color_SetInterruptMode, %function
+  78              	Counter_Color_SetInterruptMode:
+  79              	.LFB4:
+ 213:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (!Counter_Color_ControlRegRemoved || Counter_Color_UsingFixedFunction) */
+ 214:Generated_Source\PSoC5/Counter_Color.c ****     
+ 215:Generated_Source\PSoC5/Counter_Color.c ****     /* Globally disable the Fixed Function Block chosen */
+ 216:Generated_Source\PSoC5/Counter_Color.c ****     #if (Counter_Color_UsingFixedFunction)
+ 217:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_ENABLE &= ((uint8)(~Counter_Color_BLOCK_EN_MASK));
+ 218:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_STBY_ENABLE &= ((uint8)(~Counter_Color_BLOCK_STBY_EN_MASK));
+ 219:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 220:Generated_Source\PSoC5/Counter_Color.c **** }
+ 221:Generated_Source\PSoC5/Counter_Color.c **** 
+ 222:Generated_Source\PSoC5/Counter_Color.c **** 
+ 223:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 224:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_SetInterruptMode
+ 225:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 226:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 227:Generated_Source\PSoC5/Counter_Color.c **** * Configures which interrupt sources are enabled to generate the final interrupt
+ 228:Generated_Source\PSoC5/Counter_Color.c **** *
+ 229:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 230:Generated_Source\PSoC5/Counter_Color.c **** *  InterruptsMask: This parameter is an or'd collection of the status bits
+ 231:Generated_Source\PSoC5/Counter_Color.c **** *                   which will be allowed to generate the counters interrupt.   
+ 232:Generated_Source\PSoC5/Counter_Color.c **** *
+ 233:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 234:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 235:Generated_Source\PSoC5/Counter_Color.c **** *
+ 236:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 237:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_SetInterruptMode(uint8 interruptsMask) 
+ 238:Generated_Source\PSoC5/Counter_Color.c **** {
+  80              		.loc 1 238 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85              	.LVL0:
+ 239:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_STATUS_MASK = interruptsMask;
+  86              		.loc 1 239 0
+  87 0000 014B     		ldr	r3, .L8
+  88 0002 1870     		strb	r0, [r3]
+  89 0004 7047     		bx	lr
+  90              	.L9:
+  91 0006 00BF     		.align	2
+  92              	.L8:
+  93 0008 82640040 		.word	1073767554
+  94              		.cfi_endproc
+  95              	.LFE4:
+  96              		.size	Counter_Color_SetInterruptMode, .-Counter_Color_SetInterruptMode
+  97              		.section	.text.Counter_Color_ReadStatusRegister,"ax",%progbits
+  98              		.align	2
+  99              		.global	Counter_Color_ReadStatusRegister
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	Counter_Color_ReadStatusRegister, %function
+ 103              	Counter_Color_ReadStatusRegister:
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 7
+
+
+ 104              	.LFB5:
+ 240:Generated_Source\PSoC5/Counter_Color.c **** }
+ 241:Generated_Source\PSoC5/Counter_Color.c **** 
+ 242:Generated_Source\PSoC5/Counter_Color.c **** 
+ 243:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 244:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadStatusRegister
+ 245:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 246:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 247:Generated_Source\PSoC5/Counter_Color.c **** *   Reads the status register and returns it's state. This function should use
+ 248:Generated_Source\PSoC5/Counter_Color.c **** *       defined types for the bit-field information as the bits in this
+ 249:Generated_Source\PSoC5/Counter_Color.c **** *       register may be permuteable.
+ 250:Generated_Source\PSoC5/Counter_Color.c **** *
+ 251:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 252:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 253:Generated_Source\PSoC5/Counter_Color.c **** *
+ 254:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 255:Generated_Source\PSoC5/Counter_Color.c **** *  (uint8) The contents of the status register
+ 256:Generated_Source\PSoC5/Counter_Color.c **** *
+ 257:Generated_Source\PSoC5/Counter_Color.c **** * Side Effects:
+ 258:Generated_Source\PSoC5/Counter_Color.c **** *   Status register bits may be clear on read. 
+ 259:Generated_Source\PSoC5/Counter_Color.c **** *
+ 260:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 261:Generated_Source\PSoC5/Counter_Color.c **** uint8   Counter_Color_ReadStatusRegister(void) 
+ 262:Generated_Source\PSoC5/Counter_Color.c **** {
+ 105              		.loc 1 262 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		@ link register save eliminated.
+ 263:Generated_Source\PSoC5/Counter_Color.c ****     return Counter_Color_STATUS;
+ 110              		.loc 1 263 0
+ 111 0000 014B     		ldr	r3, .L11
+ 112 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 264:Generated_Source\PSoC5/Counter_Color.c **** }
+ 113              		.loc 1 264 0
+ 114 0004 7047     		bx	lr
+ 115              	.L12:
+ 116 0006 00BF     		.align	2
+ 117              	.L11:
+ 118 0008 62640040 		.word	1073767522
+ 119              		.cfi_endproc
+ 120              	.LFE5:
+ 121              		.size	Counter_Color_ReadStatusRegister, .-Counter_Color_ReadStatusRegister
+ 122              		.section	.text.Counter_Color_ReadControlRegister,"ax",%progbits
+ 123              		.align	2
+ 124              		.global	Counter_Color_ReadControlRegister
+ 125              		.thumb
+ 126              		.thumb_func
+ 127              		.type	Counter_Color_ReadControlRegister, %function
+ 128              	Counter_Color_ReadControlRegister:
+ 129              	.LFB6:
+ 265:Generated_Source\PSoC5/Counter_Color.c **** 
+ 266:Generated_Source\PSoC5/Counter_Color.c **** 
+ 267:Generated_Source\PSoC5/Counter_Color.c **** #if(!Counter_Color_ControlRegRemoved)
+ 268:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 269:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadControlRegister
+ 270:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 8
+
+
+ 271:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 272:Generated_Source\PSoC5/Counter_Color.c **** *   Reads the control register and returns it's state. This function should use
+ 273:Generated_Source\PSoC5/Counter_Color.c **** *       defined types for the bit-field information as the bits in this
+ 274:Generated_Source\PSoC5/Counter_Color.c **** *       register may be permuteable.
+ 275:Generated_Source\PSoC5/Counter_Color.c **** *
+ 276:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 277:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 278:Generated_Source\PSoC5/Counter_Color.c **** *
+ 279:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 280:Generated_Source\PSoC5/Counter_Color.c **** *  (uint8) The contents of the control register
+ 281:Generated_Source\PSoC5/Counter_Color.c **** *
+ 282:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 283:Generated_Source\PSoC5/Counter_Color.c **** uint8   Counter_Color_ReadControlRegister(void) 
+ 284:Generated_Source\PSoC5/Counter_Color.c **** {
+ 130              		.loc 1 284 0
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		@ link register save eliminated.
+ 285:Generated_Source\PSoC5/Counter_Color.c ****     return Counter_Color_CONTROL;
+ 135              		.loc 1 285 0
+ 136 0000 014B     		ldr	r3, .L14
+ 137 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 286:Generated_Source\PSoC5/Counter_Color.c **** }
+ 138              		.loc 1 286 0
+ 139 0004 7047     		bx	lr
+ 140              	.L15:
+ 141 0006 00BF     		.align	2
+ 142              	.L14:
+ 143 0008 74650040 		.word	1073767796
+ 144              		.cfi_endproc
+ 145              	.LFE6:
+ 146              		.size	Counter_Color_ReadControlRegister, .-Counter_Color_ReadControlRegister
+ 147              		.section	.text.Counter_Color_WriteControlRegister,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	Counter_Color_WriteControlRegister
+ 150              		.thumb
+ 151              		.thumb_func
+ 152              		.type	Counter_Color_WriteControlRegister, %function
+ 153              	Counter_Color_WriteControlRegister:
+ 154              	.LFB7:
+ 287:Generated_Source\PSoC5/Counter_Color.c **** 
+ 288:Generated_Source\PSoC5/Counter_Color.c **** 
+ 289:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 290:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_WriteControlRegister
+ 291:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 292:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 293:Generated_Source\PSoC5/Counter_Color.c **** *   Sets the bit-field of the control register.  This function should use
+ 294:Generated_Source\PSoC5/Counter_Color.c **** *       defined types for the bit-field information as the bits in this
+ 295:Generated_Source\PSoC5/Counter_Color.c **** *       register may be permuteable.
+ 296:Generated_Source\PSoC5/Counter_Color.c **** *
+ 297:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 298:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 299:Generated_Source\PSoC5/Counter_Color.c **** *
+ 300:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 301:Generated_Source\PSoC5/Counter_Color.c **** *  (uint8) The contents of the control register
+ 302:Generated_Source\PSoC5/Counter_Color.c **** *
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 9
+
+
+ 303:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 304:Generated_Source\PSoC5/Counter_Color.c **** void    Counter_Color_WriteControlRegister(uint8 control) 
+ 305:Generated_Source\PSoC5/Counter_Color.c **** {
+ 155              		.loc 1 305 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159              		@ link register save eliminated.
+ 160              	.LVL1:
+ 306:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_CONTROL = control;
+ 161              		.loc 1 306 0
+ 162 0000 014B     		ldr	r3, .L17
+ 163 0002 1870     		strb	r0, [r3]
+ 164 0004 7047     		bx	lr
+ 165              	.L18:
+ 166 0006 00BF     		.align	2
+ 167              	.L17:
+ 168 0008 74650040 		.word	1073767796
+ 169              		.cfi_endproc
+ 170              	.LFE7:
+ 171              		.size	Counter_Color_WriteControlRegister, .-Counter_Color_WriteControlRegister
+ 172              		.section	.text.Counter_Color_WriteCounter,"ax",%progbits
+ 173              		.align	2
+ 174              		.global	Counter_Color_WriteCounter
+ 175              		.thumb
+ 176              		.thumb_func
+ 177              		.type	Counter_Color_WriteCounter, %function
+ 178              	Counter_Color_WriteCounter:
+ 179              	.LFB8:
+ 307:Generated_Source\PSoC5/Counter_Color.c **** }
+ 308:Generated_Source\PSoC5/Counter_Color.c **** 
+ 309:Generated_Source\PSoC5/Counter_Color.c **** #endif  /* (!Counter_Color_ControlRegRemoved) */
+ 310:Generated_Source\PSoC5/Counter_Color.c **** 
+ 311:Generated_Source\PSoC5/Counter_Color.c **** 
+ 312:Generated_Source\PSoC5/Counter_Color.c **** #if (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A)))
+ 313:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 314:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_WriteCounter
+ 315:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 316:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 317:Generated_Source\PSoC5/Counter_Color.c **** *   This funtion is used to set the counter to a specific value
+ 318:Generated_Source\PSoC5/Counter_Color.c **** *
+ 319:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 320:Generated_Source\PSoC5/Counter_Color.c **** *  counter:  New counter value. 
+ 321:Generated_Source\PSoC5/Counter_Color.c **** *
+ 322:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 323:Generated_Source\PSoC5/Counter_Color.c **** *  void 
+ 324:Generated_Source\PSoC5/Counter_Color.c **** *
+ 325:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 326:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_WriteCounter(uint32 counter) \
+ 327:Generated_Source\PSoC5/Counter_Color.c ****                                    
+ 328:Generated_Source\PSoC5/Counter_Color.c **** {
+ 180              		.loc 1 328 0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184              	.LVL2:
+ 185 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 10
+
+
+ 186              		.cfi_def_cfa_offset 8
+ 187              		.cfi_offset 3, -8
+ 188              		.cfi_offset 14, -4
+ 329:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 330:Generated_Source\PSoC5/Counter_Color.c ****         /* assert if block is already enabled */
+ 331:Generated_Source\PSoC5/Counter_Color.c ****         CYASSERT (0u == (Counter_Color_GLOBAL_ENABLE & Counter_Color_BLOCK_EN_MASK));
+ 332:Generated_Source\PSoC5/Counter_Color.c ****         /* If block is disabled, enable it and then write the counter */
+ 333:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_ENABLE |= Counter_Color_BLOCK_EN_MASK;
+ 334:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG16(Counter_Color_COUNTER_LSB_PTR, (uint16)counter);
+ 335:Generated_Source\PSoC5/Counter_Color.c ****         Counter_Color_GLOBAL_ENABLE &= ((uint8)(~Counter_Color_BLOCK_EN_MASK));
+ 336:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 337:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG24(Counter_Color_COUNTER_LSB_PTR, counter);
+ 189              		.loc 1 337 0
+ 190 0002 0146     		mov	r1, r0
+ 191 0004 0148     		ldr	r0, .L21
+ 192              	.LVL3:
+ 193 0006 FFF7FEFF 		bl	CySetReg24
+ 194              	.LVL4:
+ 195 000a 08BD     		pop	{r3, pc}
+ 196              	.L22:
+ 197              		.align	2
+ 198              	.L21:
+ 199 000c 04640040 		.word	1073767428
+ 200              		.cfi_endproc
+ 201              	.LFE8:
+ 202              		.size	Counter_Color_WriteCounter, .-Counter_Color_WriteCounter
+ 203              		.section	.text.Counter_Color_ReadCounter,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	Counter_Color_ReadCounter
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	Counter_Color_ReadCounter, %function
+ 209              	Counter_Color_ReadCounter:
+ 210              	.LFB9:
+ 338:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 339:Generated_Source\PSoC5/Counter_Color.c **** }
+ 340:Generated_Source\PSoC5/Counter_Color.c **** #endif /* (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A))) */
+ 341:Generated_Source\PSoC5/Counter_Color.c **** 
+ 342:Generated_Source\PSoC5/Counter_Color.c **** 
+ 343:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 344:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadCounter
+ 345:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 346:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 347:Generated_Source\PSoC5/Counter_Color.c **** * Returns the current value of the counter.  It doesn't matter
+ 348:Generated_Source\PSoC5/Counter_Color.c **** * if the counter is enabled or running.
+ 349:Generated_Source\PSoC5/Counter_Color.c **** *
+ 350:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 351:Generated_Source\PSoC5/Counter_Color.c **** *  void:  
+ 352:Generated_Source\PSoC5/Counter_Color.c **** *
+ 353:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 354:Generated_Source\PSoC5/Counter_Color.c **** *  (uint32) The present value of the counter.
+ 355:Generated_Source\PSoC5/Counter_Color.c **** *
+ 356:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 357:Generated_Source\PSoC5/Counter_Color.c **** uint32 Counter_Color_ReadCounter(void) 
+ 358:Generated_Source\PSoC5/Counter_Color.c **** {
+ 211              		.loc 1 358 0
+ 212              		.cfi_startproc
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 11
+
+
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              		@ link register save eliminated.
+ 359:Generated_Source\PSoC5/Counter_Color.c ****     /* Force capture by reading Accumulator */
+ 360:Generated_Source\PSoC5/Counter_Color.c ****     /* Must first do a software capture to be able to read the counter */
+ 361:Generated_Source\PSoC5/Counter_Color.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 362:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 363:Generated_Source\PSoC5/Counter_Color.c **** 		(void)CY_GET_REG16(Counter_Color_COUNTER_LSB_PTR);
+ 364:Generated_Source\PSoC5/Counter_Color.c **** 	#else
+ 365:Generated_Source\PSoC5/Counter_Color.c **** 		(void)CY_GET_REG8(Counter_Color_COUNTER_LSB_PTR_8BIT);
+ 216              		.loc 1 365 0
+ 217 0000 034B     		ldr	r3, .L24
+ 218 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 366:Generated_Source\PSoC5/Counter_Color.c **** 	#endif/* (Counter_Color_UsingFixedFunction) */
+ 367:Generated_Source\PSoC5/Counter_Color.c ****     
+ 368:Generated_Source\PSoC5/Counter_Color.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 369:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 370:Generated_Source\PSoC5/Counter_Color.c ****         return ((uint32)CY_GET_REG16(Counter_Color_STATICCOUNT_LSB_PTR));
+ 371:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 372:Generated_Source\PSoC5/Counter_Color.c ****         return (CY_GET_REG24(Counter_Color_STATICCOUNT_LSB_PTR));
+ 219              		.loc 1 372 0
+ 220 0004 034B     		ldr	r3, .L24+4
+ 221 0006 1868     		ldr	r0, [r3]
+ 373:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 374:Generated_Source\PSoC5/Counter_Color.c **** }
+ 222              		.loc 1 374 0
+ 223 0008 20F07F40 		bic	r0, r0, #-16777216
+ 224 000c 7047     		bx	lr
+ 225              	.L25:
+ 226 000e 00BF     		.align	2
+ 227              	.L24:
+ 228 0010 04640040 		.word	1073767428
+ 229 0014 44640040 		.word	1073767492
+ 230              		.cfi_endproc
+ 231              	.LFE9:
+ 232              		.size	Counter_Color_ReadCounter, .-Counter_Color_ReadCounter
+ 233              		.section	.text.Counter_Color_ReadCapture,"ax",%progbits
+ 234              		.align	2
+ 235              		.global	Counter_Color_ReadCapture
+ 236              		.thumb
+ 237              		.thumb_func
+ 238              		.type	Counter_Color_ReadCapture, %function
+ 239              	Counter_Color_ReadCapture:
+ 240              	.LFB10:
+ 375:Generated_Source\PSoC5/Counter_Color.c **** 
+ 376:Generated_Source\PSoC5/Counter_Color.c **** 
+ 377:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 378:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadCapture
+ 379:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 380:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 381:Generated_Source\PSoC5/Counter_Color.c **** *   This function returns the last value captured.
+ 382:Generated_Source\PSoC5/Counter_Color.c **** *
+ 383:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 384:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 385:Generated_Source\PSoC5/Counter_Color.c **** *
+ 386:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 387:Generated_Source\PSoC5/Counter_Color.c **** *  (uint32) Present Capture value.
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 12
+
+
+ 388:Generated_Source\PSoC5/Counter_Color.c **** *
+ 389:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 390:Generated_Source\PSoC5/Counter_Color.c **** uint32 Counter_Color_ReadCapture(void) 
+ 391:Generated_Source\PSoC5/Counter_Color.c **** {
+ 241              		.loc 1 391 0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              		@ link register save eliminated.
+ 392:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 393:Generated_Source\PSoC5/Counter_Color.c ****         return ((uint32)CY_GET_REG16(Counter_Color_STATICCOUNT_LSB_PTR));
+ 394:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 395:Generated_Source\PSoC5/Counter_Color.c ****         return (CY_GET_REG24(Counter_Color_STATICCOUNT_LSB_PTR));
+ 246              		.loc 1 395 0
+ 247 0000 024B     		ldr	r3, .L27
+ 248 0002 1868     		ldr	r0, [r3]
+ 396:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 397:Generated_Source\PSoC5/Counter_Color.c **** }
+ 249              		.loc 1 397 0
+ 250 0004 20F07F40 		bic	r0, r0, #-16777216
+ 251 0008 7047     		bx	lr
+ 252              	.L28:
+ 253 000a 00BF     		.align	2
+ 254              	.L27:
+ 255 000c 44640040 		.word	1073767492
+ 256              		.cfi_endproc
+ 257              	.LFE10:
+ 258              		.size	Counter_Color_ReadCapture, .-Counter_Color_ReadCapture
+ 259              		.section	.text.Counter_Color_WritePeriod,"ax",%progbits
+ 260              		.align	2
+ 261              		.global	Counter_Color_WritePeriod
+ 262              		.thumb
+ 263              		.thumb_func
+ 264              		.type	Counter_Color_WritePeriod, %function
+ 265              	Counter_Color_WritePeriod:
+ 266              	.LFB11:
+ 398:Generated_Source\PSoC5/Counter_Color.c **** 
+ 399:Generated_Source\PSoC5/Counter_Color.c **** 
+ 400:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 401:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_WritePeriod
+ 402:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 403:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 404:Generated_Source\PSoC5/Counter_Color.c **** * Changes the period of the counter.  The new period 
+ 405:Generated_Source\PSoC5/Counter_Color.c **** * will be loaded the next time terminal count is detected.
+ 406:Generated_Source\PSoC5/Counter_Color.c **** *
+ 407:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 408:Generated_Source\PSoC5/Counter_Color.c **** *  period: (uint32) A value of 0 will result in
+ 409:Generated_Source\PSoC5/Counter_Color.c **** *         the counter remaining at zero.  
+ 410:Generated_Source\PSoC5/Counter_Color.c **** *
+ 411:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 412:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 413:Generated_Source\PSoC5/Counter_Color.c **** *
+ 414:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 415:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_WritePeriod(uint32 period) 
+ 416:Generated_Source\PSoC5/Counter_Color.c **** {
+ 267              		.loc 1 416 0
+ 268              		.cfi_startproc
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 13
+
+
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271              	.LVL5:
+ 272 0000 08B5     		push	{r3, lr}
+ 273              		.cfi_def_cfa_offset 8
+ 274              		.cfi_offset 3, -8
+ 275              		.cfi_offset 14, -4
+ 417:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 418:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG16(Counter_Color_PERIOD_LSB_PTR,(uint16)period);
+ 419:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 420:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG24(Counter_Color_PERIOD_LSB_PTR, period);
+ 276              		.loc 1 420 0
+ 277 0002 0146     		mov	r1, r0
+ 278 0004 0148     		ldr	r0, .L31
+ 279              	.LVL6:
+ 280 0006 FFF7FEFF 		bl	CySetReg24
+ 281              	.LVL7:
+ 282 000a 08BD     		pop	{r3, pc}
+ 283              	.L32:
+ 284              		.align	2
+ 285              	.L31:
+ 286 000c 24640040 		.word	1073767460
+ 287              		.cfi_endproc
+ 288              	.LFE11:
+ 289              		.size	Counter_Color_WritePeriod, .-Counter_Color_WritePeriod
+ 290              		.section	.text.Counter_Color_ReadPeriod,"ax",%progbits
+ 291              		.align	2
+ 292              		.global	Counter_Color_ReadPeriod
+ 293              		.thumb
+ 294              		.thumb_func
+ 295              		.type	Counter_Color_ReadPeriod, %function
+ 296              	Counter_Color_ReadPeriod:
+ 297              	.LFB12:
+ 421:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 422:Generated_Source\PSoC5/Counter_Color.c **** }
+ 423:Generated_Source\PSoC5/Counter_Color.c **** 
+ 424:Generated_Source\PSoC5/Counter_Color.c **** 
+ 425:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 426:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadPeriod
+ 427:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 428:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 429:Generated_Source\PSoC5/Counter_Color.c **** * Reads the current period value without affecting counter operation.
+ 430:Generated_Source\PSoC5/Counter_Color.c **** *
+ 431:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 432:Generated_Source\PSoC5/Counter_Color.c **** *  void:  
+ 433:Generated_Source\PSoC5/Counter_Color.c **** *
+ 434:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 435:Generated_Source\PSoC5/Counter_Color.c **** *  (uint32) Present period value.
+ 436:Generated_Source\PSoC5/Counter_Color.c **** *
+ 437:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 438:Generated_Source\PSoC5/Counter_Color.c **** uint32 Counter_Color_ReadPeriod(void) 
+ 439:Generated_Source\PSoC5/Counter_Color.c **** {
+ 298              		.loc 1 439 0
+ 299              		.cfi_startproc
+ 300              		@ args = 0, pretend = 0, frame = 0
+ 301              		@ frame_needed = 0, uses_anonymous_args = 0
+ 302              		@ link register save eliminated.
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 14
+
+
+ 440:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 441:Generated_Source\PSoC5/Counter_Color.c ****         return ((uint32)CY_GET_REG16(Counter_Color_PERIOD_LSB_PTR));
+ 442:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 443:Generated_Source\PSoC5/Counter_Color.c ****         return (CY_GET_REG24(Counter_Color_PERIOD_LSB_PTR));
+ 303              		.loc 1 443 0
+ 304 0000 024B     		ldr	r3, .L34
+ 305 0002 1868     		ldr	r0, [r3]
+ 444:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 445:Generated_Source\PSoC5/Counter_Color.c **** }
+ 306              		.loc 1 445 0
+ 307 0004 20F07F40 		bic	r0, r0, #-16777216
+ 308 0008 7047     		bx	lr
+ 309              	.L35:
+ 310 000a 00BF     		.align	2
+ 311              	.L34:
+ 312 000c 24640040 		.word	1073767460
+ 313              		.cfi_endproc
+ 314              	.LFE12:
+ 315              		.size	Counter_Color_ReadPeriod, .-Counter_Color_ReadPeriod
+ 316              		.section	.text.Counter_Color_WriteCompare,"ax",%progbits
+ 317              		.align	2
+ 318              		.global	Counter_Color_WriteCompare
+ 319              		.thumb
+ 320              		.thumb_func
+ 321              		.type	Counter_Color_WriteCompare, %function
+ 322              	Counter_Color_WriteCompare:
+ 323              	.LFB13:
+ 446:Generated_Source\PSoC5/Counter_Color.c **** 
+ 447:Generated_Source\PSoC5/Counter_Color.c **** 
+ 448:Generated_Source\PSoC5/Counter_Color.c **** #if (!Counter_Color_UsingFixedFunction)
+ 449:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 450:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_WriteCompare
+ 451:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 452:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 453:Generated_Source\PSoC5/Counter_Color.c **** * Changes the compare value.  The compare output will 
+ 454:Generated_Source\PSoC5/Counter_Color.c **** * reflect the new value on the next UDB clock.  The compare output will be 
+ 455:Generated_Source\PSoC5/Counter_Color.c **** * driven high when the present counter value compares true based on the 
+ 456:Generated_Source\PSoC5/Counter_Color.c **** * configured compare mode setting. 
+ 457:Generated_Source\PSoC5/Counter_Color.c **** *
+ 458:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 459:Generated_Source\PSoC5/Counter_Color.c **** *  Compare:  New compare value. 
+ 460:Generated_Source\PSoC5/Counter_Color.c **** *
+ 461:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 462:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 463:Generated_Source\PSoC5/Counter_Color.c **** *
+ 464:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 465:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_WriteCompare(uint32 compare) \
+ 466:Generated_Source\PSoC5/Counter_Color.c ****                                    
+ 467:Generated_Source\PSoC5/Counter_Color.c **** {
+ 324              		.loc 1 467 0
+ 325              		.cfi_startproc
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328              	.LVL8:
+ 329 0000 08B5     		push	{r3, lr}
+ 330              		.cfi_def_cfa_offset 8
+ 331              		.cfi_offset 3, -8
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 15
+
+
+ 332              		.cfi_offset 14, -4
+ 468:Generated_Source\PSoC5/Counter_Color.c ****     #if(Counter_Color_UsingFixedFunction)
+ 469:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG16(Counter_Color_COMPARE_LSB_PTR, (uint16)compare);
+ 470:Generated_Source\PSoC5/Counter_Color.c ****     #else
+ 471:Generated_Source\PSoC5/Counter_Color.c ****         CY_SET_REG24(Counter_Color_COMPARE_LSB_PTR, compare);
+ 333              		.loc 1 471 0
+ 334 0002 0146     		mov	r1, r0
+ 335 0004 0148     		ldr	r0, .L38
+ 336              	.LVL9:
+ 337 0006 FFF7FEFF 		bl	CySetReg24
+ 338              	.LVL10:
+ 339 000a 08BD     		pop	{r3, pc}
+ 340              	.L39:
+ 341              		.align	2
+ 342              	.L38:
+ 343 000c 34640040 		.word	1073767476
+ 344              		.cfi_endproc
+ 345              	.LFE13:
+ 346              		.size	Counter_Color_WriteCompare, .-Counter_Color_WriteCompare
+ 347              		.section	.text.Counter_Color_ReadCompare,"ax",%progbits
+ 348              		.align	2
+ 349              		.global	Counter_Color_ReadCompare
+ 350              		.thumb
+ 351              		.thumb_func
+ 352              		.type	Counter_Color_ReadCompare, %function
+ 353              	Counter_Color_ReadCompare:
+ 354              	.LFB14:
+ 472:Generated_Source\PSoC5/Counter_Color.c ****     #endif /* (Counter_Color_UsingFixedFunction) */
+ 473:Generated_Source\PSoC5/Counter_Color.c **** }
+ 474:Generated_Source\PSoC5/Counter_Color.c **** 
+ 475:Generated_Source\PSoC5/Counter_Color.c **** 
+ 476:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 477:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ReadCompare
+ 478:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 479:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 480:Generated_Source\PSoC5/Counter_Color.c **** * Returns the compare value.
+ 481:Generated_Source\PSoC5/Counter_Color.c **** *
+ 482:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 483:Generated_Source\PSoC5/Counter_Color.c **** *  void:
+ 484:Generated_Source\PSoC5/Counter_Color.c **** *
+ 485:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 486:Generated_Source\PSoC5/Counter_Color.c **** *  (uint32) Present compare value.
+ 487:Generated_Source\PSoC5/Counter_Color.c **** *
+ 488:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 489:Generated_Source\PSoC5/Counter_Color.c **** uint32 Counter_Color_ReadCompare(void) 
+ 490:Generated_Source\PSoC5/Counter_Color.c **** {
+ 355              		.loc 1 490 0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 0
+ 358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 359              		@ link register save eliminated.
+ 491:Generated_Source\PSoC5/Counter_Color.c ****     return (CY_GET_REG24(Counter_Color_COMPARE_LSB_PTR));
+ 360              		.loc 1 491 0
+ 361 0000 024B     		ldr	r3, .L41
+ 362 0002 1868     		ldr	r0, [r3]
+ 492:Generated_Source\PSoC5/Counter_Color.c **** }
+ 363              		.loc 1 492 0
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 16
+
+
+ 364 0004 20F07F40 		bic	r0, r0, #-16777216
+ 365 0008 7047     		bx	lr
+ 366              	.L42:
+ 367 000a 00BF     		.align	2
+ 368              	.L41:
+ 369 000c 34640040 		.word	1073767476
+ 370              		.cfi_endproc
+ 371              	.LFE14:
+ 372              		.size	Counter_Color_ReadCompare, .-Counter_Color_ReadCompare
+ 373              		.section	.text.Counter_Color_ClearFIFO,"ax",%progbits
+ 374              		.align	2
+ 375              		.global	Counter_Color_ClearFIFO
+ 376              		.thumb
+ 377              		.thumb_func
+ 378              		.type	Counter_Color_ClearFIFO, %function
+ 379              	Counter_Color_ClearFIFO:
+ 380              	.LFB15:
+ 493:Generated_Source\PSoC5/Counter_Color.c **** 
+ 494:Generated_Source\PSoC5/Counter_Color.c **** 
+ 495:Generated_Source\PSoC5/Counter_Color.c **** #if (Counter_Color_COMPARE_MODE_SOFTWARE)
+ 496:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 497:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_SetCompareMode
+ 498:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 499:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 500:Generated_Source\PSoC5/Counter_Color.c **** *  Sets the software controlled Compare Mode.
+ 501:Generated_Source\PSoC5/Counter_Color.c **** *
+ 502:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:
+ 503:Generated_Source\PSoC5/Counter_Color.c **** *  compareMode:  Compare Mode Enumerated Type.
+ 504:Generated_Source\PSoC5/Counter_Color.c **** *
+ 505:Generated_Source\PSoC5/Counter_Color.c **** * Return:
+ 506:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 507:Generated_Source\PSoC5/Counter_Color.c **** *
+ 508:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 509:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_SetCompareMode(uint8 compareMode) 
+ 510:Generated_Source\PSoC5/Counter_Color.c **** {
+ 511:Generated_Source\PSoC5/Counter_Color.c ****     /* Clear the compare mode bits in the control register */
+ 512:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_CONTROL &= ((uint8)(~Counter_Color_CTRL_CMPMODE_MASK));
+ 513:Generated_Source\PSoC5/Counter_Color.c ****     
+ 514:Generated_Source\PSoC5/Counter_Color.c ****     /* Write the new setting */
+ 515:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_CONTROL |= compareMode;
+ 516:Generated_Source\PSoC5/Counter_Color.c **** }
+ 517:Generated_Source\PSoC5/Counter_Color.c **** #endif  /* (Counter_Color_COMPARE_MODE_SOFTWARE) */
+ 518:Generated_Source\PSoC5/Counter_Color.c **** 
+ 519:Generated_Source\PSoC5/Counter_Color.c **** 
+ 520:Generated_Source\PSoC5/Counter_Color.c **** #if (Counter_Color_CAPTURE_MODE_SOFTWARE)
+ 521:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 522:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_SetCaptureMode
+ 523:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 524:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 525:Generated_Source\PSoC5/Counter_Color.c **** *  Sets the software controlled Capture Mode.
+ 526:Generated_Source\PSoC5/Counter_Color.c **** *
+ 527:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:
+ 528:Generated_Source\PSoC5/Counter_Color.c **** *  captureMode:  Capture Mode Enumerated Type.
+ 529:Generated_Source\PSoC5/Counter_Color.c **** *
+ 530:Generated_Source\PSoC5/Counter_Color.c **** * Return:
+ 531:Generated_Source\PSoC5/Counter_Color.c **** *  void
+ 532:Generated_Source\PSoC5/Counter_Color.c **** *
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 17
+
+
+ 533:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 534:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_SetCaptureMode(uint8 captureMode) 
+ 535:Generated_Source\PSoC5/Counter_Color.c **** {
+ 536:Generated_Source\PSoC5/Counter_Color.c ****     /* Clear the capture mode bits in the control register */
+ 537:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_CONTROL &= ((uint8)(~Counter_Color_CTRL_CAPMODE_MASK));
+ 538:Generated_Source\PSoC5/Counter_Color.c ****     
+ 539:Generated_Source\PSoC5/Counter_Color.c ****     /* Write the new setting */
+ 540:Generated_Source\PSoC5/Counter_Color.c ****     Counter_Color_CONTROL |= ((uint8)((uint8)captureMode << Counter_Color_CTRL_CAPMODE0_SHIFT));
+ 541:Generated_Source\PSoC5/Counter_Color.c **** }
+ 542:Generated_Source\PSoC5/Counter_Color.c **** #endif  /* (Counter_Color_CAPTURE_MODE_SOFTWARE) */
+ 543:Generated_Source\PSoC5/Counter_Color.c **** 
+ 544:Generated_Source\PSoC5/Counter_Color.c **** 
+ 545:Generated_Source\PSoC5/Counter_Color.c **** /*******************************************************************************
+ 546:Generated_Source\PSoC5/Counter_Color.c **** * Function Name: Counter_Color_ClearFIFO
+ 547:Generated_Source\PSoC5/Counter_Color.c **** ********************************************************************************
+ 548:Generated_Source\PSoC5/Counter_Color.c **** * Summary:
+ 549:Generated_Source\PSoC5/Counter_Color.c **** *   This function clears all capture data from the capture FIFO
+ 550:Generated_Source\PSoC5/Counter_Color.c **** *
+ 551:Generated_Source\PSoC5/Counter_Color.c **** * Parameters:  
+ 552:Generated_Source\PSoC5/Counter_Color.c **** *  void:
+ 553:Generated_Source\PSoC5/Counter_Color.c **** *
+ 554:Generated_Source\PSoC5/Counter_Color.c **** * Return: 
+ 555:Generated_Source\PSoC5/Counter_Color.c **** *  None
+ 556:Generated_Source\PSoC5/Counter_Color.c **** *
+ 557:Generated_Source\PSoC5/Counter_Color.c **** *******************************************************************************/
+ 558:Generated_Source\PSoC5/Counter_Color.c **** void Counter_Color_ClearFIFO(void) 
+ 559:Generated_Source\PSoC5/Counter_Color.c **** {
+ 381              		.loc 1 559 0
+ 382              		.cfi_startproc
+ 383              		@ args = 0, pretend = 0, frame = 0
+ 384              		@ frame_needed = 0, uses_anonymous_args = 0
+ 385 0000 08B5     		push	{r3, lr}
+ 386              		.cfi_def_cfa_offset 8
+ 387              		.cfi_offset 3, -8
+ 388              		.cfi_offset 14, -4
+ 560:Generated_Source\PSoC5/Counter_Color.c **** 
+ 561:Generated_Source\PSoC5/Counter_Color.c ****     while(0u != (Counter_Color_ReadStatusRegister() & Counter_Color_STATUS_FIFONEMP))
+ 389              		.loc 1 561 0
+ 390 0002 01E0     		b	.L44
+ 391              	.L45:
+ 562:Generated_Source\PSoC5/Counter_Color.c ****     {
+ 563:Generated_Source\PSoC5/Counter_Color.c ****         (void)Counter_Color_ReadCapture();
+ 392              		.loc 1 563 0
+ 393 0004 FFF7FEFF 		bl	Counter_Color_ReadCapture
+ 394              	.LVL11:
+ 395              	.L44:
+ 561:Generated_Source\PSoC5/Counter_Color.c ****     {
+ 396              		.loc 1 561 0
+ 397 0008 FFF7FEFF 		bl	Counter_Color_ReadStatusRegister
+ 398              	.LVL12:
+ 399 000c 10F0400F 		tst	r0, #64
+ 400 0010 F8D1     		bne	.L45
+ 564:Generated_Source\PSoC5/Counter_Color.c ****     }
+ 565:Generated_Source\PSoC5/Counter_Color.c **** 
+ 566:Generated_Source\PSoC5/Counter_Color.c **** }
+ 401              		.loc 1 566 0
+ 402 0012 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 18
+
+
+ 403              		.cfi_endproc
+ 404              	.LFE15:
+ 405              		.size	Counter_Color_ClearFIFO, .-Counter_Color_ClearFIFO
+ 406              		.section	.text.Counter_Color_Init,"ax",%progbits
+ 407              		.align	2
+ 408              		.global	Counter_Color_Init
+ 409              		.thumb
+ 410              		.thumb_func
+ 411              		.type	Counter_Color_Init, %function
+ 412              	Counter_Color_Init:
+ 413              	.LFB0:
+  38:Generated_Source\PSoC5/Counter_Color.c ****         #if (!Counter_Color_UsingFixedFunction && !Counter_Color_ControlRegRemoved)
+ 414              		.loc 1 38 0
+ 415              		.cfi_startproc
+ 416              		@ args = 0, pretend = 0, frame = 0
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418 0000 08B5     		push	{r3, lr}
+ 419              		.cfi_def_cfa_offset 8
+ 420              		.cfi_offset 3, -8
+ 421              		.cfi_offset 14, -4
+  79:Generated_Source\PSoC5/Counter_Color.c ****             Counter_Color_CONTROL = ctrl | Counter_Color_DEFAULT_COMPARE_MODE;
+ 422              		.loc 1 79 0
+ 423 0002 134A     		ldr	r2, .L49
+ 424 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 425 0006 03F0F803 		and	r3, r3, #248
+ 426              	.LVL13:
+  80:Generated_Source\PSoC5/Counter_Color.c ****             
+ 427              		.loc 1 80 0
+ 428 000a 43F00103 		orr	r3, r3, #1
+ 429              	.LVL14:
+ 430 000e 1370     		strb	r3, [r2]
+  83:Generated_Source\PSoC5/Counter_Color.c ****             
+ 431              		.loc 1 83 0
+ 432 0010 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 433 0012 03F0FC03 		and	r3, r3, #252
+ 434              	.LVL15:
+  86:Generated_Source\PSoC5/Counter_Color.c ****             #else
+ 435              		.loc 1 86 0
+ 436 0016 43F00803 		orr	r3, r3, #8
+ 437              	.LVL16:
+ 438 001a 1370     		strb	r3, [r2]
+  96:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!Counter_Color_UsingFixedFunction) */
+ 439              		.loc 1 96 0
+ 440 001c FFF7FEFF 		bl	Counter_Color_ClearFIFO
+ 441              	.LVL17:
+ 100:Generated_Source\PSoC5/Counter_Color.c ****         #if (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A)))
+ 442              		.loc 1 100 0
+ 443 0020 0C48     		ldr	r0, .L49+4
+ 444 0022 FFF7FEFF 		bl	Counter_Color_WritePeriod
+ 445              	.LVL18:
+ 102:Generated_Source\PSoC5/Counter_Color.c ****         #endif /* (!(Counter_Color_UsingFixedFunction && (CY_PSOC5A))) */
+ 446              		.loc 1 102 0
+ 447 0026 0020     		movs	r0, #0
+ 448 0028 FFF7FEFF 		bl	Counter_Color_WriteCounter
+ 449              	.LVL19:
+ 104:Generated_Source\PSoC5/Counter_Color.c ****         
+ 450              		.loc 1 104 0
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 19
+
+
+ 451 002c 1020     		movs	r0, #16
+ 452 002e FFF7FEFF 		bl	Counter_Color_SetInterruptMode
+ 453              	.LVL20:
+ 108:Generated_Source\PSoC5/Counter_Color.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 454              		.loc 1 108 0
+ 455 0032 FFF7FEFF 		bl	Counter_Color_ReadStatusRegister
+ 456              	.LVL21:
+ 110:Generated_Source\PSoC5/Counter_Color.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 457              		.loc 1 110 0
+ 458 0036 8020     		movs	r0, #128
+ 459 0038 FFF7FEFF 		bl	Counter_Color_WriteCompare
+ 460              	.LVL22:
+ 115:Generated_Source\PSoC5/Counter_Color.c ****             
+ 461              		.loc 1 115 0
+ 462 003c FFF7FEFF 		bl	CyEnterCriticalSection
+ 463              	.LVL23:
+ 117:Generated_Source\PSoC5/Counter_Color.c ****             
+ 464              		.loc 1 117 0
+ 465 0040 054A     		ldr	r2, .L49+8
+ 466 0042 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 467 0044 43F01003 		orr	r3, r3, #16
+ 468 0048 1370     		strb	r3, [r2]
+ 120:Generated_Source\PSoC5/Counter_Color.c ****             
+ 469              		.loc 1 120 0
+ 470 004a FFF7FEFF 		bl	CyExitCriticalSection
+ 471              	.LVL24:
+ 472 004e 08BD     		pop	{r3, pc}
+ 473              	.L50:
+ 474              		.align	2
+ 475              	.L49:
+ 476 0050 74650040 		.word	1073767796
+ 477 0054 FEFFFF00 		.word	16777214
+ 478 0058 92640040 		.word	1073767570
+ 479              		.cfi_endproc
+ 480              	.LFE0:
+ 481              		.size	Counter_Color_Init, .-Counter_Color_Init
+ 482              		.section	.text.Counter_Color_Start,"ax",%progbits
+ 483              		.align	2
+ 484              		.global	Counter_Color_Start
+ 485              		.thumb
+ 486              		.thumb_func
+ 487              		.type	Counter_Color_Start, %function
+ 488              	Counter_Color_Start:
+ 489              	.LFB2:
+ 179:Generated_Source\PSoC5/Counter_Color.c ****     if(Counter_Color_initVar == 0u)
+ 490              		.loc 1 179 0
+ 491              		.cfi_startproc
+ 492              		@ args = 0, pretend = 0, frame = 0
+ 493              		@ frame_needed = 0, uses_anonymous_args = 0
+ 494 0000 08B5     		push	{r3, lr}
+ 495              		.cfi_def_cfa_offset 8
+ 496              		.cfi_offset 3, -8
+ 497              		.cfi_offset 14, -4
+ 180:Generated_Source\PSoC5/Counter_Color.c ****     {
+ 498              		.loc 1 180 0
+ 499 0002 054B     		ldr	r3, .L54
+ 500 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 20
+
+
+ 501 0006 23B9     		cbnz	r3, .L52
+ 182:Generated_Source\PSoC5/Counter_Color.c ****         
+ 502              		.loc 1 182 0
+ 503 0008 FFF7FEFF 		bl	Counter_Color_Init
+ 504              	.LVL25:
+ 184:Generated_Source\PSoC5/Counter_Color.c ****     }
+ 505              		.loc 1 184 0
+ 506 000c 0122     		movs	r2, #1
+ 507 000e 024B     		ldr	r3, .L54
+ 508 0010 1A70     		strb	r2, [r3]
+ 509              	.L52:
+ 188:Generated_Source\PSoC5/Counter_Color.c **** }
+ 510              		.loc 1 188 0
+ 511 0012 FFF7FEFF 		bl	Counter_Color_Enable
+ 512              	.LVL26:
+ 513 0016 08BD     		pop	{r3, pc}
+ 514              	.L55:
+ 515              		.align	2
+ 516              	.L54:
+ 517 0018 00000000 		.word	.LANCHOR0
+ 518              		.cfi_endproc
+ 519              	.LFE2:
+ 520              		.size	Counter_Color_Start, .-Counter_Color_Start
+ 521              		.global	Counter_Color_initVar
+ 522              		.bss
+ 523              		.set	.LANCHOR0,. + 0
+ 524              		.type	Counter_Color_initVar, %object
+ 525              		.size	Counter_Color_initVar, 1
+ 526              	Counter_Color_initVar:
+ 527 0000 00       		.space	1
+ 528              		.text
+ 529              	.Letext0:
+ 530              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 531              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 532              		.section	.debug_info,"",%progbits
+ 533              	.Ldebug_info0:
+ 534 0000 A3030000 		.4byte	0x3a3
+ 535 0004 0400     		.2byte	0x4
+ 536 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 537 000a 04       		.byte	0x4
+ 538 000b 01       		.uleb128 0x1
+ 539 000c 94020000 		.4byte	.LASF44
+ 540 0010 0C       		.byte	0xc
+ 541 0011 E1000000 		.4byte	.LASF45
+ 542 0015 5D010000 		.4byte	.LASF46
+ 543 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 544 001d 00000000 		.4byte	0
+ 545 0021 00000000 		.4byte	.Ldebug_line0
+ 546 0025 02       		.uleb128 0x2
+ 547 0026 01       		.byte	0x1
+ 548 0027 06       		.byte	0x6
+ 549 0028 EC030000 		.4byte	.LASF0
+ 550 002c 02       		.uleb128 0x2
+ 551 002d 01       		.byte	0x1
+ 552 002e 08       		.byte	0x8
+ 553 002f 2D010000 		.4byte	.LASF1
+ 554 0033 02       		.uleb128 0x2
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 21
+
+
+ 555 0034 02       		.byte	0x2
+ 556 0035 05       		.byte	0x5
+ 557 0036 9C030000 		.4byte	.LASF2
+ 558 003a 02       		.uleb128 0x2
+ 559 003b 02       		.byte	0x2
+ 560 003c 07       		.byte	0x7
+ 561 003d 34000000 		.4byte	.LASF3
+ 562 0041 02       		.uleb128 0x2
+ 563 0042 04       		.byte	0x4
+ 564 0043 05       		.byte	0x5
+ 565 0044 D7030000 		.4byte	.LASF4
+ 566 0048 02       		.uleb128 0x2
+ 567 0049 04       		.byte	0x4
+ 568 004a 07       		.byte	0x7
+ 569 004b A9010000 		.4byte	.LASF5
+ 570 004f 02       		.uleb128 0x2
+ 571 0050 08       		.byte	0x8
+ 572 0051 05       		.byte	0x5
+ 573 0052 45030000 		.4byte	.LASF6
+ 574 0056 02       		.uleb128 0x2
+ 575 0057 08       		.byte	0x8
+ 576 0058 07       		.byte	0x7
+ 577 0059 16010000 		.4byte	.LASF7
+ 578 005d 03       		.uleb128 0x3
+ 579 005e 04       		.byte	0x4
+ 580 005f 05       		.byte	0x5
+ 581 0060 696E7400 		.ascii	"int\000"
+ 582 0064 02       		.uleb128 0x2
+ 583 0065 04       		.byte	0x4
+ 584 0066 07       		.byte	0x7
+ 585 0067 57020000 		.4byte	.LASF8
+ 586 006b 04       		.uleb128 0x4
+ 587 006c BB010000 		.4byte	.LASF9
+ 588 0070 02       		.byte	0x2
+ 589 0071 E401     		.2byte	0x1e4
+ 590 0073 2C000000 		.4byte	0x2c
+ 591 0077 04       		.uleb128 0x4
+ 592 0078 39020000 		.4byte	.LASF10
+ 593 007c 02       		.byte	0x2
+ 594 007d E601     		.2byte	0x1e6
+ 595 007f 48000000 		.4byte	0x48
+ 596 0083 02       		.uleb128 0x2
+ 597 0084 04       		.byte	0x4
+ 598 0085 04       		.byte	0x4
+ 599 0086 08010000 		.4byte	.LASF11
+ 600 008a 02       		.uleb128 0x2
+ 601 008b 08       		.byte	0x8
+ 602 008c 04       		.byte	0x4
+ 603 008d 18020000 		.4byte	.LASF12
+ 604 0091 02       		.uleb128 0x2
+ 605 0092 01       		.byte	0x1
+ 606 0093 08       		.byte	0x8
+ 607 0094 53030000 		.4byte	.LASF13
+ 608 0098 04       		.uleb128 0x4
+ 609 0099 58010000 		.4byte	.LASF14
+ 610 009d 02       		.byte	0x2
+ 611 009e 8E02     		.2byte	0x28e
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 22
+
+
+ 612 00a0 A4000000 		.4byte	0xa4
+ 613 00a4 05       		.uleb128 0x5
+ 614 00a5 6B000000 		.4byte	0x6b
+ 615 00a9 04       		.uleb128 0x4
+ 616 00aa 00000000 		.4byte	.LASF15
+ 617 00ae 02       		.byte	0x2
+ 618 00af 9002     		.2byte	0x290
+ 619 00b1 B5000000 		.4byte	0xb5
+ 620 00b5 05       		.uleb128 0x5
+ 621 00b6 77000000 		.4byte	0x77
+ 622 00ba 02       		.uleb128 0x2
+ 623 00bb 08       		.byte	0x8
+ 624 00bc 04       		.byte	0x4
+ 625 00bd E0030000 		.4byte	.LASF16
+ 626 00c1 02       		.uleb128 0x2
+ 627 00c2 04       		.byte	0x4
+ 628 00c3 07       		.byte	0x7
+ 629 00c4 22030000 		.4byte	.LASF17
+ 630 00c8 06       		.uleb128 0x6
+ 631 00c9 F0010000 		.4byte	.LASF18
+ 632 00cd 01       		.byte	0x1
+ 633 00ce 8F       		.byte	0x8f
+ 634 00cf 00000000 		.4byte	.LFB1
+ 635 00d3 10000000 		.4byte	.LFE1-.LFB1
+ 636 00d7 01       		.uleb128 0x1
+ 637 00d8 9C       		.byte	0x9c
+ 638 00d9 06       		.uleb128 0x6
+ 639 00da 05020000 		.4byte	.LASF19
+ 640 00de 01       		.byte	0x1
+ 641 00df D0       		.byte	0xd0
+ 642 00e0 00000000 		.4byte	.LFB3
+ 643 00e4 10000000 		.4byte	.LFE3-.LFB3
+ 644 00e8 01       		.uleb128 0x1
+ 645 00e9 9C       		.byte	0x9c
+ 646 00ea 07       		.uleb128 0x7
+ 647 00eb 72030000 		.4byte	.LASF22
+ 648 00ef 01       		.byte	0x1
+ 649 00f0 ED       		.byte	0xed
+ 650 00f1 00000000 		.4byte	.LFB4
+ 651 00f5 0C000000 		.4byte	.LFE4-.LFB4
+ 652 00f9 01       		.uleb128 0x1
+ 653 00fa 9C       		.byte	0x9c
+ 654 00fb 0D010000 		.4byte	0x10d
+ 655 00ff 08       		.uleb128 0x8
+ 656 0100 C9010000 		.4byte	.LASF24
+ 657 0104 01       		.byte	0x1
+ 658 0105 ED       		.byte	0xed
+ 659 0106 6B000000 		.4byte	0x6b
+ 660 010a 01       		.uleb128 0x1
+ 661 010b 50       		.byte	0x50
+ 662 010c 00       		.byte	0
+ 663 010d 09       		.uleb128 0x9
+ 664 010e C0000000 		.4byte	.LASF20
+ 665 0112 01       		.byte	0x1
+ 666 0113 0501     		.2byte	0x105
+ 667 0115 6B000000 		.4byte	0x6b
+ 668 0119 00000000 		.4byte	.LFB5
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 23
+
+
+ 669 011d 0C000000 		.4byte	.LFE5-.LFB5
+ 670 0121 01       		.uleb128 0x1
+ 671 0122 9C       		.byte	0x9c
+ 672 0123 09       		.uleb128 0x9
+ 673 0124 9E000000 		.4byte	.LASF21
+ 674 0128 01       		.byte	0x1
+ 675 0129 1B01     		.2byte	0x11b
+ 676 012b 6B000000 		.4byte	0x6b
+ 677 012f 00000000 		.4byte	.LFB6
+ 678 0133 0C000000 		.4byte	.LFE6-.LFB6
+ 679 0137 01       		.uleb128 0x1
+ 680 0138 9C       		.byte	0x9c
+ 681 0139 0A       		.uleb128 0xa
+ 682 013a 7B000000 		.4byte	.LASF23
+ 683 013e 01       		.byte	0x1
+ 684 013f 3001     		.2byte	0x130
+ 685 0141 00000000 		.4byte	.LFB7
+ 686 0145 0C000000 		.4byte	.LFE7-.LFB7
+ 687 0149 01       		.uleb128 0x1
+ 688 014a 9C       		.byte	0x9c
+ 689 014b 5E010000 		.4byte	0x15e
+ 690 014f 0B       		.uleb128 0xb
+ 691 0150 C1010000 		.4byte	.LASF25
+ 692 0154 01       		.byte	0x1
+ 693 0155 3001     		.2byte	0x130
+ 694 0157 6B000000 		.4byte	0x6b
+ 695 015b 01       		.uleb128 0x1
+ 696 015c 50       		.byte	0x50
+ 697 015d 00       		.byte	0
+ 698 015e 0A       		.uleb128 0xa
+ 699 015f 47000000 		.4byte	.LASF26
+ 700 0163 01       		.byte	0x1
+ 701 0164 4601     		.2byte	0x146
+ 702 0166 00000000 		.4byte	.LFB8
+ 703 016a 10000000 		.4byte	.LFE8-.LFB8
+ 704 016e 01       		.uleb128 0x1
+ 705 016f 9C       		.byte	0x9c
+ 706 0170 9F010000 		.4byte	0x19f
+ 707 0174 0C       		.uleb128 0xc
+ 708 0175 0E010000 		.4byte	.LASF27
+ 709 0179 01       		.byte	0x1
+ 710 017a 4601     		.2byte	0x146
+ 711 017c 77000000 		.4byte	0x77
+ 712 0180 00000000 		.4byte	.LLST0
+ 713 0184 0D       		.uleb128 0xd
+ 714 0185 0A000000 		.4byte	.LVL4
+ 715 0189 84030000 		.4byte	0x384
+ 716 018d 0E       		.uleb128 0xe
+ 717 018e 01       		.uleb128 0x1
+ 718 018f 50       		.byte	0x50
+ 719 0190 05       		.uleb128 0x5
+ 720 0191 0C       		.byte	0xc
+ 721 0192 04640040 		.4byte	0x40006404
+ 722 0196 0E       		.uleb128 0xe
+ 723 0197 01       		.uleb128 0x1
+ 724 0198 51       		.byte	0x51
+ 725 0199 03       		.uleb128 0x3
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 24
+
+
+ 726 019a F3       		.byte	0xf3
+ 727 019b 01       		.uleb128 0x1
+ 728 019c 50       		.byte	0x50
+ 729 019d 00       		.byte	0
+ 730 019e 00       		.byte	0
+ 731 019f 09       		.uleb128 0x9
+ 732 01a0 2B030000 		.4byte	.LASF28
+ 733 01a4 01       		.byte	0x1
+ 734 01a5 6501     		.2byte	0x165
+ 735 01a7 77000000 		.4byte	0x77
+ 736 01ab 00000000 		.4byte	.LFB9
+ 737 01af 18000000 		.4byte	.LFE9-.LFB9
+ 738 01b3 01       		.uleb128 0x1
+ 739 01b4 9C       		.byte	0x9c
+ 740 01b5 09       		.uleb128 0x9
+ 741 01b6 1F020000 		.4byte	.LASF29
+ 742 01ba 01       		.byte	0x1
+ 743 01bb 8601     		.2byte	0x186
+ 744 01bd 77000000 		.4byte	0x77
+ 745 01c1 00000000 		.4byte	.LFB10
+ 746 01c5 10000000 		.4byte	.LFE10-.LFB10
+ 747 01c9 01       		.uleb128 0x1
+ 748 01ca 9C       		.byte	0x9c
+ 749 01cb 0A       		.uleb128 0xa
+ 750 01cc 58030000 		.4byte	.LASF30
+ 751 01d0 01       		.byte	0x1
+ 752 01d1 9F01     		.2byte	0x19f
+ 753 01d3 00000000 		.4byte	.LFB11
+ 754 01d7 10000000 		.4byte	.LFE11-.LFB11
+ 755 01db 01       		.uleb128 0x1
+ 756 01dc 9C       		.byte	0x9c
+ 757 01dd 0C020000 		.4byte	0x20c
+ 758 01e1 0C       		.uleb128 0xc
+ 759 01e2 2D000000 		.4byte	.LASF31
+ 760 01e6 01       		.byte	0x1
+ 761 01e7 9F01     		.2byte	0x19f
+ 762 01e9 77000000 		.4byte	0x77
+ 763 01ed 2C000000 		.4byte	.LLST1
+ 764 01f1 0D       		.uleb128 0xd
+ 765 01f2 0A000000 		.4byte	.LVL7
+ 766 01f6 84030000 		.4byte	0x384
+ 767 01fa 0E       		.uleb128 0xe
+ 768 01fb 01       		.uleb128 0x1
+ 769 01fc 50       		.byte	0x50
+ 770 01fd 05       		.uleb128 0x5
+ 771 01fe 0C       		.byte	0xc
+ 772 01ff 24640040 		.4byte	0x40006424
+ 773 0203 0E       		.uleb128 0xe
+ 774 0204 01       		.uleb128 0x1
+ 775 0205 51       		.byte	0x51
+ 776 0206 03       		.uleb128 0x3
+ 777 0207 F3       		.byte	0xf3
+ 778 0208 01       		.uleb128 0x1
+ 779 0209 50       		.byte	0x50
+ 780 020a 00       		.byte	0
+ 781 020b 00       		.byte	0
+ 782 020c 09       		.uleb128 0x9
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 25
+
+
+ 783 020d 62000000 		.4byte	.LASF32
+ 784 0211 01       		.byte	0x1
+ 785 0212 B601     		.2byte	0x1b6
+ 786 0214 77000000 		.4byte	0x77
+ 787 0218 00000000 		.4byte	.LFB12
+ 788 021c 10000000 		.4byte	.LFE12-.LFB12
+ 789 0220 01       		.uleb128 0x1
+ 790 0221 9C       		.byte	0x9c
+ 791 0222 0A       		.uleb128 0xa
+ 792 0223 A6030000 		.4byte	.LASF33
+ 793 0227 01       		.byte	0x1
+ 794 0228 D101     		.2byte	0x1d1
+ 795 022a 00000000 		.4byte	.LFB13
+ 796 022e 10000000 		.4byte	.LFE13-.LFB13
+ 797 0232 01       		.uleb128 0x1
+ 798 0233 9C       		.byte	0x9c
+ 799 0234 63020000 		.4byte	0x263
+ 800 0238 0C       		.uleb128 0xc
+ 801 0239 F8030000 		.4byte	.LASF34
+ 802 023d 01       		.byte	0x1
+ 803 023e D101     		.2byte	0x1d1
+ 804 0240 77000000 		.4byte	0x77
+ 805 0244 58000000 		.4byte	.LLST2
+ 806 0248 0D       		.uleb128 0xd
+ 807 0249 0A000000 		.4byte	.LVL10
+ 808 024d 84030000 		.4byte	0x384
+ 809 0251 0E       		.uleb128 0xe
+ 810 0252 01       		.uleb128 0x1
+ 811 0253 50       		.byte	0x50
+ 812 0254 05       		.uleb128 0x5
+ 813 0255 0C       		.byte	0xc
+ 814 0256 34640040 		.4byte	0x40006434
+ 815 025a 0E       		.uleb128 0xe
+ 816 025b 01       		.uleb128 0x1
+ 817 025c 51       		.byte	0x51
+ 818 025d 03       		.uleb128 0x3
+ 819 025e F3       		.byte	0xf3
+ 820 025f 01       		.uleb128 0x1
+ 821 0260 50       		.byte	0x50
+ 822 0261 00       		.byte	0
+ 823 0262 00       		.byte	0
+ 824 0263 09       		.uleb128 0x9
+ 825 0264 7A020000 		.4byte	.LASF35
+ 826 0268 01       		.byte	0x1
+ 827 0269 E901     		.2byte	0x1e9
+ 828 026b 77000000 		.4byte	0x77
+ 829 026f 00000000 		.4byte	.LFB14
+ 830 0273 10000000 		.4byte	.LFE14-.LFB14
+ 831 0277 01       		.uleb128 0x1
+ 832 0278 9C       		.byte	0x9c
+ 833 0279 0A       		.uleb128 0xa
+ 834 027a D8010000 		.4byte	.LASF36
+ 835 027e 01       		.byte	0x1
+ 836 027f 2E02     		.2byte	0x22e
+ 837 0281 00000000 		.4byte	.LFB15
+ 838 0285 14000000 		.4byte	.LFE15-.LFB15
+ 839 0289 01       		.uleb128 0x1
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 26
+
+
+ 840 028a 9C       		.byte	0x9c
+ 841 028b A2020000 		.4byte	0x2a2
+ 842 028f 0F       		.uleb128 0xf
+ 843 0290 08000000 		.4byte	.LVL11
+ 844 0294 B5010000 		.4byte	0x1b5
+ 845 0298 0F       		.uleb128 0xf
+ 846 0299 0C000000 		.4byte	.LVL12
+ 847 029d 0D010000 		.4byte	0x10d
+ 848 02a1 00       		.byte	0
+ 849 02a2 07       		.uleb128 0x7
+ 850 02a3 1A000000 		.4byte	.LASF37
+ 851 02a7 01       		.byte	0x1
+ 852 02a8 25       		.byte	0x25
+ 853 02a9 00000000 		.4byte	.LFB0
+ 854 02ad 5C000000 		.4byte	.LFE0-.LFB0
+ 855 02b1 01       		.uleb128 0x1
+ 856 02b2 9C       		.byte	0x9c
+ 857 02b3 4B030000 		.4byte	0x34b
+ 858 02b7 10       		.uleb128 0x10
+ 859 02b8 00040000 		.4byte	.LASF38
+ 860 02bc 01       		.byte	0x1
+ 861 02bd 28       		.byte	0x28
+ 862 02be 6B000000 		.4byte	0x6b
+ 863 02c2 84000000 		.4byte	.LLST3
+ 864 02c6 10       		.uleb128 0x10
+ 865 02c7 3B010000 		.4byte	.LASF39
+ 866 02cb 01       		.byte	0x1
+ 867 02cc 2D       		.byte	0x2d
+ 868 02cd 6B000000 		.4byte	0x6b
+ 869 02d1 A2000000 		.4byte	.LLST4
+ 870 02d5 0F       		.uleb128 0xf
+ 871 02d6 20000000 		.4byte	.LVL17
+ 872 02da 79020000 		.4byte	0x279
+ 873 02de 11       		.uleb128 0x11
+ 874 02df 26000000 		.4byte	.LVL18
+ 875 02e3 CB010000 		.4byte	0x1cb
+ 876 02e7 F5020000 		.4byte	0x2f5
+ 877 02eb 0E       		.uleb128 0xe
+ 878 02ec 01       		.uleb128 0x1
+ 879 02ed 50       		.byte	0x50
+ 880 02ee 05       		.uleb128 0x5
+ 881 02ef 0C       		.byte	0xc
+ 882 02f0 FEFFFF00 		.4byte	0xfffffe
+ 883 02f4 00       		.byte	0
+ 884 02f5 11       		.uleb128 0x11
+ 885 02f6 2C000000 		.4byte	.LVL19
+ 886 02fa 5E010000 		.4byte	0x15e
+ 887 02fe 08030000 		.4byte	0x308
+ 888 0302 0E       		.uleb128 0xe
+ 889 0303 01       		.uleb128 0x1
+ 890 0304 50       		.byte	0x50
+ 891 0305 01       		.uleb128 0x1
+ 892 0306 30       		.byte	0x30
+ 893 0307 00       		.byte	0
+ 894 0308 11       		.uleb128 0x11
+ 895 0309 32000000 		.4byte	.LVL20
+ 896 030d EA000000 		.4byte	0xea
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 27
+
+
+ 897 0311 1B030000 		.4byte	0x31b
+ 898 0315 0E       		.uleb128 0xe
+ 899 0316 01       		.uleb128 0x1
+ 900 0317 50       		.byte	0x50
+ 901 0318 01       		.uleb128 0x1
+ 902 0319 40       		.byte	0x40
+ 903 031a 00       		.byte	0
+ 904 031b 0F       		.uleb128 0xf
+ 905 031c 36000000 		.4byte	.LVL21
+ 906 0320 0D010000 		.4byte	0x10d
+ 907 0324 11       		.uleb128 0x11
+ 908 0325 3C000000 		.4byte	.LVL22
+ 909 0329 22020000 		.4byte	0x222
+ 910 032d 38030000 		.4byte	0x338
+ 911 0331 0E       		.uleb128 0xe
+ 912 0332 01       		.uleb128 0x1
+ 913 0333 50       		.byte	0x50
+ 914 0334 02       		.uleb128 0x2
+ 915 0335 08       		.byte	0x8
+ 916 0336 80       		.byte	0x80
+ 917 0337 00       		.byte	0
+ 918 0338 0F       		.uleb128 0xf
+ 919 0339 40000000 		.4byte	.LVL23
+ 920 033d 90030000 		.4byte	0x390
+ 921 0341 0F       		.uleb128 0xf
+ 922 0342 4E000000 		.4byte	.LVL24
+ 923 0346 9B030000 		.4byte	0x39b
+ 924 034a 00       		.byte	0
+ 925 034b 07       		.uleb128 0x7
+ 926 034c 06000000 		.4byte	.LASF40
+ 927 0350 01       		.byte	0x1
+ 928 0351 B2       		.byte	0xb2
+ 929 0352 00000000 		.4byte	.LFB2
+ 930 0356 1C000000 		.4byte	.LFE2-.LFB2
+ 931 035a 01       		.uleb128 0x1
+ 932 035b 9C       		.byte	0x9c
+ 933 035c 73030000 		.4byte	0x373
+ 934 0360 0F       		.uleb128 0xf
+ 935 0361 0C000000 		.4byte	.LVL25
+ 936 0365 A2020000 		.4byte	0x2a2
+ 937 0369 0F       		.uleb128 0xf
+ 938 036a 16000000 		.4byte	.LVL26
+ 939 036e C8000000 		.4byte	0xc8
+ 940 0372 00       		.byte	0
+ 941 0373 12       		.uleb128 0x12
+ 942 0374 C1030000 		.4byte	.LASF47
+ 943 0378 01       		.byte	0x1
+ 944 0379 15       		.byte	0x15
+ 945 037a 6B000000 		.4byte	0x6b
+ 946 037e 05       		.uleb128 0x5
+ 947 037f 03       		.byte	0x3
+ 948 0380 00000000 		.4byte	Counter_Color_initVar
+ 949 0384 13       		.uleb128 0x13
+ 950 0385 91030000 		.4byte	.LASF41
+ 951 0389 91030000 		.4byte	.LASF41
+ 952 038d 02       		.byte	0x2
+ 953 038e 2702     		.2byte	0x227
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 28
+
+
+ 954 0390 14       		.uleb128 0x14
+ 955 0391 40020000 		.4byte	.LASF42
+ 956 0395 40020000 		.4byte	.LASF42
+ 957 0399 03       		.byte	0x3
+ 958 039a 7D       		.byte	0x7d
+ 959 039b 14       		.uleb128 0x14
+ 960 039c 64020000 		.4byte	.LASF43
+ 961 03a0 64020000 		.4byte	.LASF43
+ 962 03a4 03       		.byte	0x3
+ 963 03a5 7E       		.byte	0x7e
+ 964 03a6 00       		.byte	0
+ 965              		.section	.debug_abbrev,"",%progbits
+ 966              	.Ldebug_abbrev0:
+ 967 0000 01       		.uleb128 0x1
+ 968 0001 11       		.uleb128 0x11
+ 969 0002 01       		.byte	0x1
+ 970 0003 25       		.uleb128 0x25
+ 971 0004 0E       		.uleb128 0xe
+ 972 0005 13       		.uleb128 0x13
+ 973 0006 0B       		.uleb128 0xb
+ 974 0007 03       		.uleb128 0x3
+ 975 0008 0E       		.uleb128 0xe
+ 976 0009 1B       		.uleb128 0x1b
+ 977 000a 0E       		.uleb128 0xe
+ 978 000b 55       		.uleb128 0x55
+ 979 000c 17       		.uleb128 0x17
+ 980 000d 11       		.uleb128 0x11
+ 981 000e 01       		.uleb128 0x1
+ 982 000f 10       		.uleb128 0x10
+ 983 0010 17       		.uleb128 0x17
+ 984 0011 00       		.byte	0
+ 985 0012 00       		.byte	0
+ 986 0013 02       		.uleb128 0x2
+ 987 0014 24       		.uleb128 0x24
+ 988 0015 00       		.byte	0
+ 989 0016 0B       		.uleb128 0xb
+ 990 0017 0B       		.uleb128 0xb
+ 991 0018 3E       		.uleb128 0x3e
+ 992 0019 0B       		.uleb128 0xb
+ 993 001a 03       		.uleb128 0x3
+ 994 001b 0E       		.uleb128 0xe
+ 995 001c 00       		.byte	0
+ 996 001d 00       		.byte	0
+ 997 001e 03       		.uleb128 0x3
+ 998 001f 24       		.uleb128 0x24
+ 999 0020 00       		.byte	0
+ 1000 0021 0B       		.uleb128 0xb
+ 1001 0022 0B       		.uleb128 0xb
+ 1002 0023 3E       		.uleb128 0x3e
+ 1003 0024 0B       		.uleb128 0xb
+ 1004 0025 03       		.uleb128 0x3
+ 1005 0026 08       		.uleb128 0x8
+ 1006 0027 00       		.byte	0
+ 1007 0028 00       		.byte	0
+ 1008 0029 04       		.uleb128 0x4
+ 1009 002a 16       		.uleb128 0x16
+ 1010 002b 00       		.byte	0
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 29
+
+
+ 1011 002c 03       		.uleb128 0x3
+ 1012 002d 0E       		.uleb128 0xe
+ 1013 002e 3A       		.uleb128 0x3a
+ 1014 002f 0B       		.uleb128 0xb
+ 1015 0030 3B       		.uleb128 0x3b
+ 1016 0031 05       		.uleb128 0x5
+ 1017 0032 49       		.uleb128 0x49
+ 1018 0033 13       		.uleb128 0x13
+ 1019 0034 00       		.byte	0
+ 1020 0035 00       		.byte	0
+ 1021 0036 05       		.uleb128 0x5
+ 1022 0037 35       		.uleb128 0x35
+ 1023 0038 00       		.byte	0
+ 1024 0039 49       		.uleb128 0x49
+ 1025 003a 13       		.uleb128 0x13
+ 1026 003b 00       		.byte	0
+ 1027 003c 00       		.byte	0
+ 1028 003d 06       		.uleb128 0x6
+ 1029 003e 2E       		.uleb128 0x2e
+ 1030 003f 00       		.byte	0
+ 1031 0040 3F       		.uleb128 0x3f
+ 1032 0041 19       		.uleb128 0x19
+ 1033 0042 03       		.uleb128 0x3
+ 1034 0043 0E       		.uleb128 0xe
+ 1035 0044 3A       		.uleb128 0x3a
+ 1036 0045 0B       		.uleb128 0xb
+ 1037 0046 3B       		.uleb128 0x3b
+ 1038 0047 0B       		.uleb128 0xb
+ 1039 0048 27       		.uleb128 0x27
+ 1040 0049 19       		.uleb128 0x19
+ 1041 004a 11       		.uleb128 0x11
+ 1042 004b 01       		.uleb128 0x1
+ 1043 004c 12       		.uleb128 0x12
+ 1044 004d 06       		.uleb128 0x6
+ 1045 004e 40       		.uleb128 0x40
+ 1046 004f 18       		.uleb128 0x18
+ 1047 0050 9742     		.uleb128 0x2117
+ 1048 0052 19       		.uleb128 0x19
+ 1049 0053 00       		.byte	0
+ 1050 0054 00       		.byte	0
+ 1051 0055 07       		.uleb128 0x7
+ 1052 0056 2E       		.uleb128 0x2e
+ 1053 0057 01       		.byte	0x1
+ 1054 0058 3F       		.uleb128 0x3f
+ 1055 0059 19       		.uleb128 0x19
+ 1056 005a 03       		.uleb128 0x3
+ 1057 005b 0E       		.uleb128 0xe
+ 1058 005c 3A       		.uleb128 0x3a
+ 1059 005d 0B       		.uleb128 0xb
+ 1060 005e 3B       		.uleb128 0x3b
+ 1061 005f 0B       		.uleb128 0xb
+ 1062 0060 27       		.uleb128 0x27
+ 1063 0061 19       		.uleb128 0x19
+ 1064 0062 11       		.uleb128 0x11
+ 1065 0063 01       		.uleb128 0x1
+ 1066 0064 12       		.uleb128 0x12
+ 1067 0065 06       		.uleb128 0x6
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 30
+
+
+ 1068 0066 40       		.uleb128 0x40
+ 1069 0067 18       		.uleb128 0x18
+ 1070 0068 9742     		.uleb128 0x2117
+ 1071 006a 19       		.uleb128 0x19
+ 1072 006b 01       		.uleb128 0x1
+ 1073 006c 13       		.uleb128 0x13
+ 1074 006d 00       		.byte	0
+ 1075 006e 00       		.byte	0
+ 1076 006f 08       		.uleb128 0x8
+ 1077 0070 05       		.uleb128 0x5
+ 1078 0071 00       		.byte	0
+ 1079 0072 03       		.uleb128 0x3
+ 1080 0073 0E       		.uleb128 0xe
+ 1081 0074 3A       		.uleb128 0x3a
+ 1082 0075 0B       		.uleb128 0xb
+ 1083 0076 3B       		.uleb128 0x3b
+ 1084 0077 0B       		.uleb128 0xb
+ 1085 0078 49       		.uleb128 0x49
+ 1086 0079 13       		.uleb128 0x13
+ 1087 007a 02       		.uleb128 0x2
+ 1088 007b 18       		.uleb128 0x18
+ 1089 007c 00       		.byte	0
+ 1090 007d 00       		.byte	0
+ 1091 007e 09       		.uleb128 0x9
+ 1092 007f 2E       		.uleb128 0x2e
+ 1093 0080 00       		.byte	0
+ 1094 0081 3F       		.uleb128 0x3f
+ 1095 0082 19       		.uleb128 0x19
+ 1096 0083 03       		.uleb128 0x3
+ 1097 0084 0E       		.uleb128 0xe
+ 1098 0085 3A       		.uleb128 0x3a
+ 1099 0086 0B       		.uleb128 0xb
+ 1100 0087 3B       		.uleb128 0x3b
+ 1101 0088 05       		.uleb128 0x5
+ 1102 0089 27       		.uleb128 0x27
+ 1103 008a 19       		.uleb128 0x19
+ 1104 008b 49       		.uleb128 0x49
+ 1105 008c 13       		.uleb128 0x13
+ 1106 008d 11       		.uleb128 0x11
+ 1107 008e 01       		.uleb128 0x1
+ 1108 008f 12       		.uleb128 0x12
+ 1109 0090 06       		.uleb128 0x6
+ 1110 0091 40       		.uleb128 0x40
+ 1111 0092 18       		.uleb128 0x18
+ 1112 0093 9742     		.uleb128 0x2117
+ 1113 0095 19       		.uleb128 0x19
+ 1114 0096 00       		.byte	0
+ 1115 0097 00       		.byte	0
+ 1116 0098 0A       		.uleb128 0xa
+ 1117 0099 2E       		.uleb128 0x2e
+ 1118 009a 01       		.byte	0x1
+ 1119 009b 3F       		.uleb128 0x3f
+ 1120 009c 19       		.uleb128 0x19
+ 1121 009d 03       		.uleb128 0x3
+ 1122 009e 0E       		.uleb128 0xe
+ 1123 009f 3A       		.uleb128 0x3a
+ 1124 00a0 0B       		.uleb128 0xb
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 31
+
+
+ 1125 00a1 3B       		.uleb128 0x3b
+ 1126 00a2 05       		.uleb128 0x5
+ 1127 00a3 27       		.uleb128 0x27
+ 1128 00a4 19       		.uleb128 0x19
+ 1129 00a5 11       		.uleb128 0x11
+ 1130 00a6 01       		.uleb128 0x1
+ 1131 00a7 12       		.uleb128 0x12
+ 1132 00a8 06       		.uleb128 0x6
+ 1133 00a9 40       		.uleb128 0x40
+ 1134 00aa 18       		.uleb128 0x18
+ 1135 00ab 9742     		.uleb128 0x2117
+ 1136 00ad 19       		.uleb128 0x19
+ 1137 00ae 01       		.uleb128 0x1
+ 1138 00af 13       		.uleb128 0x13
+ 1139 00b0 00       		.byte	0
+ 1140 00b1 00       		.byte	0
+ 1141 00b2 0B       		.uleb128 0xb
+ 1142 00b3 05       		.uleb128 0x5
+ 1143 00b4 00       		.byte	0
+ 1144 00b5 03       		.uleb128 0x3
+ 1145 00b6 0E       		.uleb128 0xe
+ 1146 00b7 3A       		.uleb128 0x3a
+ 1147 00b8 0B       		.uleb128 0xb
+ 1148 00b9 3B       		.uleb128 0x3b
+ 1149 00ba 05       		.uleb128 0x5
+ 1150 00bb 49       		.uleb128 0x49
+ 1151 00bc 13       		.uleb128 0x13
+ 1152 00bd 02       		.uleb128 0x2
+ 1153 00be 18       		.uleb128 0x18
+ 1154 00bf 00       		.byte	0
+ 1155 00c0 00       		.byte	0
+ 1156 00c1 0C       		.uleb128 0xc
+ 1157 00c2 05       		.uleb128 0x5
+ 1158 00c3 00       		.byte	0
+ 1159 00c4 03       		.uleb128 0x3
+ 1160 00c5 0E       		.uleb128 0xe
+ 1161 00c6 3A       		.uleb128 0x3a
+ 1162 00c7 0B       		.uleb128 0xb
+ 1163 00c8 3B       		.uleb128 0x3b
+ 1164 00c9 05       		.uleb128 0x5
+ 1165 00ca 49       		.uleb128 0x49
+ 1166 00cb 13       		.uleb128 0x13
+ 1167 00cc 02       		.uleb128 0x2
+ 1168 00cd 17       		.uleb128 0x17
+ 1169 00ce 00       		.byte	0
+ 1170 00cf 00       		.byte	0
+ 1171 00d0 0D       		.uleb128 0xd
+ 1172 00d1 898201   		.uleb128 0x4109
+ 1173 00d4 01       		.byte	0x1
+ 1174 00d5 11       		.uleb128 0x11
+ 1175 00d6 01       		.uleb128 0x1
+ 1176 00d7 31       		.uleb128 0x31
+ 1177 00d8 13       		.uleb128 0x13
+ 1178 00d9 00       		.byte	0
+ 1179 00da 00       		.byte	0
+ 1180 00db 0E       		.uleb128 0xe
+ 1181 00dc 8A8201   		.uleb128 0x410a
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 32
+
+
+ 1182 00df 00       		.byte	0
+ 1183 00e0 02       		.uleb128 0x2
+ 1184 00e1 18       		.uleb128 0x18
+ 1185 00e2 9142     		.uleb128 0x2111
+ 1186 00e4 18       		.uleb128 0x18
+ 1187 00e5 00       		.byte	0
+ 1188 00e6 00       		.byte	0
+ 1189 00e7 0F       		.uleb128 0xf
+ 1190 00e8 898201   		.uleb128 0x4109
+ 1191 00eb 00       		.byte	0
+ 1192 00ec 11       		.uleb128 0x11
+ 1193 00ed 01       		.uleb128 0x1
+ 1194 00ee 31       		.uleb128 0x31
+ 1195 00ef 13       		.uleb128 0x13
+ 1196 00f0 00       		.byte	0
+ 1197 00f1 00       		.byte	0
+ 1198 00f2 10       		.uleb128 0x10
+ 1199 00f3 34       		.uleb128 0x34
+ 1200 00f4 00       		.byte	0
+ 1201 00f5 03       		.uleb128 0x3
+ 1202 00f6 0E       		.uleb128 0xe
+ 1203 00f7 3A       		.uleb128 0x3a
+ 1204 00f8 0B       		.uleb128 0xb
+ 1205 00f9 3B       		.uleb128 0x3b
+ 1206 00fa 0B       		.uleb128 0xb
+ 1207 00fb 49       		.uleb128 0x49
+ 1208 00fc 13       		.uleb128 0x13
+ 1209 00fd 02       		.uleb128 0x2
+ 1210 00fe 17       		.uleb128 0x17
+ 1211 00ff 00       		.byte	0
+ 1212 0100 00       		.byte	0
+ 1213 0101 11       		.uleb128 0x11
+ 1214 0102 898201   		.uleb128 0x4109
+ 1215 0105 01       		.byte	0x1
+ 1216 0106 11       		.uleb128 0x11
+ 1217 0107 01       		.uleb128 0x1
+ 1218 0108 31       		.uleb128 0x31
+ 1219 0109 13       		.uleb128 0x13
+ 1220 010a 01       		.uleb128 0x1
+ 1221 010b 13       		.uleb128 0x13
+ 1222 010c 00       		.byte	0
+ 1223 010d 00       		.byte	0
+ 1224 010e 12       		.uleb128 0x12
+ 1225 010f 34       		.uleb128 0x34
+ 1226 0110 00       		.byte	0
+ 1227 0111 03       		.uleb128 0x3
+ 1228 0112 0E       		.uleb128 0xe
+ 1229 0113 3A       		.uleb128 0x3a
+ 1230 0114 0B       		.uleb128 0xb
+ 1231 0115 3B       		.uleb128 0x3b
+ 1232 0116 0B       		.uleb128 0xb
+ 1233 0117 49       		.uleb128 0x49
+ 1234 0118 13       		.uleb128 0x13
+ 1235 0119 3F       		.uleb128 0x3f
+ 1236 011a 19       		.uleb128 0x19
+ 1237 011b 02       		.uleb128 0x2
+ 1238 011c 18       		.uleb128 0x18
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 33
+
+
+ 1239 011d 00       		.byte	0
+ 1240 011e 00       		.byte	0
+ 1241 011f 13       		.uleb128 0x13
+ 1242 0120 2E       		.uleb128 0x2e
+ 1243 0121 00       		.byte	0
+ 1244 0122 3F       		.uleb128 0x3f
+ 1245 0123 19       		.uleb128 0x19
+ 1246 0124 3C       		.uleb128 0x3c
+ 1247 0125 19       		.uleb128 0x19
+ 1248 0126 6E       		.uleb128 0x6e
+ 1249 0127 0E       		.uleb128 0xe
+ 1250 0128 03       		.uleb128 0x3
+ 1251 0129 0E       		.uleb128 0xe
+ 1252 012a 3A       		.uleb128 0x3a
+ 1253 012b 0B       		.uleb128 0xb
+ 1254 012c 3B       		.uleb128 0x3b
+ 1255 012d 05       		.uleb128 0x5
+ 1256 012e 00       		.byte	0
+ 1257 012f 00       		.byte	0
+ 1258 0130 14       		.uleb128 0x14
+ 1259 0131 2E       		.uleb128 0x2e
+ 1260 0132 00       		.byte	0
+ 1261 0133 3F       		.uleb128 0x3f
+ 1262 0134 19       		.uleb128 0x19
+ 1263 0135 3C       		.uleb128 0x3c
+ 1264 0136 19       		.uleb128 0x19
+ 1265 0137 6E       		.uleb128 0x6e
+ 1266 0138 0E       		.uleb128 0xe
+ 1267 0139 03       		.uleb128 0x3
+ 1268 013a 0E       		.uleb128 0xe
+ 1269 013b 3A       		.uleb128 0x3a
+ 1270 013c 0B       		.uleb128 0xb
+ 1271 013d 3B       		.uleb128 0x3b
+ 1272 013e 0B       		.uleb128 0xb
+ 1273 013f 00       		.byte	0
+ 1274 0140 00       		.byte	0
+ 1275 0141 00       		.byte	0
+ 1276              		.section	.debug_loc,"",%progbits
+ 1277              	.Ldebug_loc0:
+ 1278              	.LLST0:
+ 1279 0000 00000000 		.4byte	.LVL2
+ 1280 0004 06000000 		.4byte	.LVL3
+ 1281 0008 0100     		.2byte	0x1
+ 1282 000a 50       		.byte	0x50
+ 1283 000b 06000000 		.4byte	.LVL3
+ 1284 000f 09000000 		.4byte	.LVL4-1
+ 1285 0013 0100     		.2byte	0x1
+ 1286 0015 51       		.byte	0x51
+ 1287 0016 09000000 		.4byte	.LVL4-1
+ 1288 001a 10000000 		.4byte	.LFE8
+ 1289 001e 0400     		.2byte	0x4
+ 1290 0020 F3       		.byte	0xf3
+ 1291 0021 01       		.uleb128 0x1
+ 1292 0022 50       		.byte	0x50
+ 1293 0023 9F       		.byte	0x9f
+ 1294 0024 00000000 		.4byte	0
+ 1295 0028 00000000 		.4byte	0
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 34
+
+
+ 1296              	.LLST1:
+ 1297 002c 00000000 		.4byte	.LVL5
+ 1298 0030 06000000 		.4byte	.LVL6
+ 1299 0034 0100     		.2byte	0x1
+ 1300 0036 50       		.byte	0x50
+ 1301 0037 06000000 		.4byte	.LVL6
+ 1302 003b 09000000 		.4byte	.LVL7-1
+ 1303 003f 0100     		.2byte	0x1
+ 1304 0041 51       		.byte	0x51
+ 1305 0042 09000000 		.4byte	.LVL7-1
+ 1306 0046 10000000 		.4byte	.LFE11
+ 1307 004a 0400     		.2byte	0x4
+ 1308 004c F3       		.byte	0xf3
+ 1309 004d 01       		.uleb128 0x1
+ 1310 004e 50       		.byte	0x50
+ 1311 004f 9F       		.byte	0x9f
+ 1312 0050 00000000 		.4byte	0
+ 1313 0054 00000000 		.4byte	0
+ 1314              	.LLST2:
+ 1315 0058 00000000 		.4byte	.LVL8
+ 1316 005c 06000000 		.4byte	.LVL9
+ 1317 0060 0100     		.2byte	0x1
+ 1318 0062 50       		.byte	0x50
+ 1319 0063 06000000 		.4byte	.LVL9
+ 1320 0067 09000000 		.4byte	.LVL10-1
+ 1321 006b 0100     		.2byte	0x1
+ 1322 006d 51       		.byte	0x51
+ 1323 006e 09000000 		.4byte	.LVL10-1
+ 1324 0072 10000000 		.4byte	.LFE13
+ 1325 0076 0400     		.2byte	0x4
+ 1326 0078 F3       		.byte	0xf3
+ 1327 0079 01       		.uleb128 0x1
+ 1328 007a 50       		.byte	0x50
+ 1329 007b 9F       		.byte	0x9f
+ 1330 007c 00000000 		.4byte	0
+ 1331 0080 00000000 		.4byte	0
+ 1332              	.LLST3:
+ 1333 0084 0A000000 		.4byte	.LVL13
+ 1334 0088 0E000000 		.4byte	.LVL14
+ 1335 008c 0100     		.2byte	0x1
+ 1336 008e 53       		.byte	0x53
+ 1337 008f 16000000 		.4byte	.LVL15
+ 1338 0093 1A000000 		.4byte	.LVL16
+ 1339 0097 0100     		.2byte	0x1
+ 1340 0099 53       		.byte	0x53
+ 1341 009a 00000000 		.4byte	0
+ 1342 009e 00000000 		.4byte	0
+ 1343              	.LLST4:
+ 1344 00a2 40000000 		.4byte	.LVL23
+ 1345 00a6 4D000000 		.4byte	.LVL24-1
+ 1346 00aa 0100     		.2byte	0x1
+ 1347 00ac 50       		.byte	0x50
+ 1348 00ad 00000000 		.4byte	0
+ 1349 00b1 00000000 		.4byte	0
+ 1350              		.section	.debug_aranges,"",%progbits
+ 1351 0000 94000000 		.4byte	0x94
+ 1352 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 35
+
+
+ 1353 0006 00000000 		.4byte	.Ldebug_info0
+ 1354 000a 04       		.byte	0x4
+ 1355 000b 00       		.byte	0
+ 1356 000c 0000     		.2byte	0
+ 1357 000e 0000     		.2byte	0
+ 1358 0010 00000000 		.4byte	.LFB1
+ 1359 0014 10000000 		.4byte	.LFE1-.LFB1
+ 1360 0018 00000000 		.4byte	.LFB3
+ 1361 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1362 0020 00000000 		.4byte	.LFB4
+ 1363 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1364 0028 00000000 		.4byte	.LFB5
+ 1365 002c 0C000000 		.4byte	.LFE5-.LFB5
+ 1366 0030 00000000 		.4byte	.LFB6
+ 1367 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1368 0038 00000000 		.4byte	.LFB7
+ 1369 003c 0C000000 		.4byte	.LFE7-.LFB7
+ 1370 0040 00000000 		.4byte	.LFB8
+ 1371 0044 10000000 		.4byte	.LFE8-.LFB8
+ 1372 0048 00000000 		.4byte	.LFB9
+ 1373 004c 18000000 		.4byte	.LFE9-.LFB9
+ 1374 0050 00000000 		.4byte	.LFB10
+ 1375 0054 10000000 		.4byte	.LFE10-.LFB10
+ 1376 0058 00000000 		.4byte	.LFB11
+ 1377 005c 10000000 		.4byte	.LFE11-.LFB11
+ 1378 0060 00000000 		.4byte	.LFB12
+ 1379 0064 10000000 		.4byte	.LFE12-.LFB12
+ 1380 0068 00000000 		.4byte	.LFB13
+ 1381 006c 10000000 		.4byte	.LFE13-.LFB13
+ 1382 0070 00000000 		.4byte	.LFB14
+ 1383 0074 10000000 		.4byte	.LFE14-.LFB14
+ 1384 0078 00000000 		.4byte	.LFB15
+ 1385 007c 14000000 		.4byte	.LFE15-.LFB15
+ 1386 0080 00000000 		.4byte	.LFB0
+ 1387 0084 5C000000 		.4byte	.LFE0-.LFB0
+ 1388 0088 00000000 		.4byte	.LFB2
+ 1389 008c 1C000000 		.4byte	.LFE2-.LFB2
+ 1390 0090 00000000 		.4byte	0
+ 1391 0094 00000000 		.4byte	0
+ 1392              		.section	.debug_ranges,"",%progbits
+ 1393              	.Ldebug_ranges0:
+ 1394 0000 00000000 		.4byte	.LFB1
+ 1395 0004 10000000 		.4byte	.LFE1
+ 1396 0008 00000000 		.4byte	.LFB3
+ 1397 000c 10000000 		.4byte	.LFE3
+ 1398 0010 00000000 		.4byte	.LFB4
+ 1399 0014 0C000000 		.4byte	.LFE4
+ 1400 0018 00000000 		.4byte	.LFB5
+ 1401 001c 0C000000 		.4byte	.LFE5
+ 1402 0020 00000000 		.4byte	.LFB6
+ 1403 0024 0C000000 		.4byte	.LFE6
+ 1404 0028 00000000 		.4byte	.LFB7
+ 1405 002c 0C000000 		.4byte	.LFE7
+ 1406 0030 00000000 		.4byte	.LFB8
+ 1407 0034 10000000 		.4byte	.LFE8
+ 1408 0038 00000000 		.4byte	.LFB9
+ 1409 003c 18000000 		.4byte	.LFE9
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 36
+
+
+ 1410 0040 00000000 		.4byte	.LFB10
+ 1411 0044 10000000 		.4byte	.LFE10
+ 1412 0048 00000000 		.4byte	.LFB11
+ 1413 004c 10000000 		.4byte	.LFE11
+ 1414 0050 00000000 		.4byte	.LFB12
+ 1415 0054 10000000 		.4byte	.LFE12
+ 1416 0058 00000000 		.4byte	.LFB13
+ 1417 005c 10000000 		.4byte	.LFE13
+ 1418 0060 00000000 		.4byte	.LFB14
+ 1419 0064 10000000 		.4byte	.LFE14
+ 1420 0068 00000000 		.4byte	.LFB15
+ 1421 006c 14000000 		.4byte	.LFE15
+ 1422 0070 00000000 		.4byte	.LFB0
+ 1423 0074 5C000000 		.4byte	.LFE0
+ 1424 0078 00000000 		.4byte	.LFB2
+ 1425 007c 1C000000 		.4byte	.LFE2
+ 1426 0080 00000000 		.4byte	0
+ 1427 0084 00000000 		.4byte	0
+ 1428              		.section	.debug_line,"",%progbits
+ 1429              	.Ldebug_line0:
+ 1430 0000 8B010000 		.section	.debug_str,"MS",%progbits,1
+ 1430      02005500 
+ 1430      00000201 
+ 1430      FB0E0D00 
+ 1430      01010101 
+ 1431              	.LASF15:
+ 1432 0000 72656733 		.ascii	"reg32\000"
+ 1432      3200
+ 1433              	.LASF40:
+ 1434 0006 436F756E 		.ascii	"Counter_Color_Start\000"
+ 1434      7465725F 
+ 1434      436F6C6F 
+ 1434      725F5374 
+ 1434      61727400 
+ 1435              	.LASF37:
+ 1436 001a 436F756E 		.ascii	"Counter_Color_Init\000"
+ 1436      7465725F 
+ 1436      436F6C6F 
+ 1436      725F496E 
+ 1436      697400
+ 1437              	.LASF31:
+ 1438 002d 70657269 		.ascii	"period\000"
+ 1438      6F6400
+ 1439              	.LASF3:
+ 1440 0034 73686F72 		.ascii	"short unsigned int\000"
+ 1440      7420756E 
+ 1440      7369676E 
+ 1440      65642069 
+ 1440      6E7400
+ 1441              	.LASF26:
+ 1442 0047 436F756E 		.ascii	"Counter_Color_WriteCounter\000"
+ 1442      7465725F 
+ 1442      436F6C6F 
+ 1442      725F5772 
+ 1442      69746543 
+ 1443              	.LASF32:
+ 1444 0062 436F756E 		.ascii	"Counter_Color_ReadPeriod\000"
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 37
+
+
+ 1444      7465725F 
+ 1444      436F6C6F 
+ 1444      725F5265 
+ 1444      61645065 
+ 1445              	.LASF23:
+ 1446 007b 436F756E 		.ascii	"Counter_Color_WriteControlRegister\000"
+ 1446      7465725F 
+ 1446      436F6C6F 
+ 1446      725F5772 
+ 1446      69746543 
+ 1447              	.LASF21:
+ 1448 009e 436F756E 		.ascii	"Counter_Color_ReadControlRegister\000"
+ 1448      7465725F 
+ 1448      436F6C6F 
+ 1448      725F5265 
+ 1448      6164436F 
+ 1449              	.LASF20:
+ 1450 00c0 436F756E 		.ascii	"Counter_Color_ReadStatusRegister\000"
+ 1450      7465725F 
+ 1450      436F6C6F 
+ 1450      725F5265 
+ 1450      61645374 
+ 1451              	.LASF45:
+ 1452 00e1 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_Color.c\000"
+ 1452      72617465 
+ 1452      645F536F 
+ 1452      75726365 
+ 1452      5C50536F 
+ 1453              	.LASF11:
+ 1454 0108 666C6F61 		.ascii	"float\000"
+ 1454      7400
+ 1455              	.LASF27:
+ 1456 010e 636F756E 		.ascii	"counter\000"
+ 1456      74657200 
+ 1457              	.LASF7:
+ 1458 0116 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1458      206C6F6E 
+ 1458      6720756E 
+ 1458      7369676E 
+ 1458      65642069 
+ 1459              	.LASF1:
+ 1460 012d 756E7369 		.ascii	"unsigned char\000"
+ 1460      676E6564 
+ 1460      20636861 
+ 1460      7200
+ 1461              	.LASF39:
+ 1462 013b 436F756E 		.ascii	"Counter_Color_interruptState\000"
+ 1462      7465725F 
+ 1462      436F6C6F 
+ 1462      725F696E 
+ 1462      74657272 
+ 1463              	.LASF14:
+ 1464 0158 72656738 		.ascii	"reg8\000"
+ 1464      00
+ 1465              	.LASF46:
+ 1466 015d 523A5C59 		.ascii	"R:\\Year 03\\ECE3091 - Engineering Design\\Prelim\\"
+ 1466      65617220 
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 38
+
+
+ 1466      30335C45 
+ 1466      43453330 
+ 1466      3931202D 
+ 1467 018c 436F6465 		.ascii	"Codes\\Trial_02\\Test_02.cydsn\000"
+ 1467      735C5472 
+ 1467      69616C5F 
+ 1467      30325C54 
+ 1467      6573745F 
+ 1468              	.LASF5:
+ 1469 01a9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1469      20756E73 
+ 1469      69676E65 
+ 1469      6420696E 
+ 1469      7400
+ 1470              	.LASF9:
+ 1471 01bb 75696E74 		.ascii	"uint8\000"
+ 1471      3800
+ 1472              	.LASF25:
+ 1473 01c1 636F6E74 		.ascii	"control\000"
+ 1473      726F6C00 
+ 1474              	.LASF24:
+ 1475 01c9 696E7465 		.ascii	"interruptsMask\000"
+ 1475      72727570 
+ 1475      74734D61 
+ 1475      736B00
+ 1476              	.LASF36:
+ 1477 01d8 436F756E 		.ascii	"Counter_Color_ClearFIFO\000"
+ 1477      7465725F 
+ 1477      436F6C6F 
+ 1477      725F436C 
+ 1477      65617246 
+ 1478              	.LASF18:
+ 1479 01f0 436F756E 		.ascii	"Counter_Color_Enable\000"
+ 1479      7465725F 
+ 1479      436F6C6F 
+ 1479      725F456E 
+ 1479      61626C65 
+ 1480              	.LASF19:
+ 1481 0205 436F756E 		.ascii	"Counter_Color_Stop\000"
+ 1481      7465725F 
+ 1481      436F6C6F 
+ 1481      725F5374 
+ 1481      6F7000
+ 1482              	.LASF12:
+ 1483 0218 646F7562 		.ascii	"double\000"
+ 1483      6C6500
+ 1484              	.LASF29:
+ 1485 021f 436F756E 		.ascii	"Counter_Color_ReadCapture\000"
+ 1485      7465725F 
+ 1485      436F6C6F 
+ 1485      725F5265 
+ 1485      61644361 
+ 1486              	.LASF10:
+ 1487 0239 75696E74 		.ascii	"uint32\000"
+ 1487      333200
+ 1488              	.LASF42:
+ 1489 0240 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 39
+
+
+ 1489      74657243 
+ 1489      72697469 
+ 1489      63616C53 
+ 1489      65637469 
+ 1490              	.LASF8:
+ 1491 0257 756E7369 		.ascii	"unsigned int\000"
+ 1491      676E6564 
+ 1491      20696E74 
+ 1491      00
+ 1492              	.LASF43:
+ 1493 0264 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1493      69744372 
+ 1493      69746963 
+ 1493      616C5365 
+ 1493      6374696F 
+ 1494              	.LASF35:
+ 1495 027a 436F756E 		.ascii	"Counter_Color_ReadCompare\000"
+ 1495      7465725F 
+ 1495      436F6C6F 
+ 1495      725F5265 
+ 1495      6164436F 
+ 1496              	.LASF44:
+ 1497 0294 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1497      43313120 
+ 1497      352E342E 
+ 1497      31203230 
+ 1497      31363036 
+ 1498 02c7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1498      20726576 
+ 1498      6973696F 
+ 1498      6E203233 
+ 1498      37373135 
+ 1499 02fa 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1499      66756E63 
+ 1499      74696F6E 
+ 1499      2D736563 
+ 1499      74696F6E 
+ 1500              	.LASF17:
+ 1501 0322 73697A65 		.ascii	"sizetype\000"
+ 1501      74797065 
+ 1501      00
+ 1502              	.LASF28:
+ 1503 032b 436F756E 		.ascii	"Counter_Color_ReadCounter\000"
+ 1503      7465725F 
+ 1503      436F6C6F 
+ 1503      725F5265 
+ 1503      6164436F 
+ 1504              	.LASF6:
+ 1505 0345 6C6F6E67 		.ascii	"long long int\000"
+ 1505      206C6F6E 
+ 1505      6720696E 
+ 1505      7400
+ 1506              	.LASF13:
+ 1507 0353 63686172 		.ascii	"char\000"
+ 1507      00
+ 1508              	.LASF30:
+ 1509 0358 436F756E 		.ascii	"Counter_Color_WritePeriod\000"
+ARM GAS  C:\Users\pasan savindu\AppData\Local\Temp\ccGYOE7t.s 			page 40
+
+
+ 1509      7465725F 
+ 1509      436F6C6F 
+ 1509      725F5772 
+ 1509      69746550 
+ 1510              	.LASF22:
+ 1511 0372 436F756E 		.ascii	"Counter_Color_SetInterruptMode\000"
+ 1511      7465725F 
+ 1511      436F6C6F 
+ 1511      725F5365 
+ 1511      74496E74 
+ 1512              	.LASF41:
+ 1513 0391 43795365 		.ascii	"CySetReg24\000"
+ 1513      74526567 
+ 1513      323400
+ 1514              	.LASF2:
+ 1515 039c 73686F72 		.ascii	"short int\000"
+ 1515      7420696E 
+ 1515      7400
+ 1516              	.LASF33:
+ 1517 03a6 436F756E 		.ascii	"Counter_Color_WriteCompare\000"
+ 1517      7465725F 
+ 1517      436F6C6F 
+ 1517      725F5772 
+ 1517      69746543 
+ 1518              	.LASF47:
+ 1519 03c1 436F756E 		.ascii	"Counter_Color_initVar\000"
+ 1519      7465725F 
+ 1519      436F6C6F 
+ 1519      725F696E 
+ 1519      69745661 
+ 1520              	.LASF4:
+ 1521 03d7 6C6F6E67 		.ascii	"long int\000"
+ 1521      20696E74 
+ 1521      00
+ 1522              	.LASF16:
+ 1523 03e0 6C6F6E67 		.ascii	"long double\000"
+ 1523      20646F75 
+ 1523      626C6500 
+ 1524              	.LASF0:
+ 1525 03ec 7369676E 		.ascii	"signed char\000"
+ 1525      65642063 
+ 1525      68617200 
+ 1526              	.LASF34:
+ 1527 03f8 636F6D70 		.ascii	"compare\000"
+ 1527      61726500 
+ 1528              	.LASF38:
+ 1529 0400 6374726C 		.ascii	"ctrl\000"
+ 1529      00
+ 1530              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
